@@ -1,5 +1,4 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactSection } from '@/components/ContactSection'
@@ -11,7 +10,6 @@ import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
 import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import imageLaptop from '@/images/laptop.jpg'
-import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 
 const substanceGroups = [
@@ -72,61 +70,112 @@ function SubstanceGroups() {
   )
 }
 
-function CaseStudies({
-  caseStudies,
-}: {
-  caseStudies: Array<MDXEntry<CaseStudy>>
-}) {
+const substanceReports = [
+  {
+    id: 'kokaina',
+    name: 'Kokaina',
+    icon: '❄️',
+    category: 'Stymulant',
+    date: '2024-12',
+    summary: 'Silny stymulant układu nerwowego wydobywany z liści koki. Powoduje euforię, zwiększoną energię i pewność siebie.',
+    riskLevel: 'Wysokie ryzyko',
+    duration: '30-90 min',
+    reports: 247
+  },
+  {
+    id: 'benzydamina',
+    name: 'Benzydamina',
+    icon: '💊',
+    category: 'Dysocjant/Deliriant',
+    date: '2024-11',
+    summary: 'Lek przeciwzapalny dostępny bez recepty, w wysokich dawkach wywołuje efekty halucynogenne i dysocjacyjne.',
+    riskLevel: 'Średnie ryzyko',
+    duration: '6-8 godzin',
+    reports: 89
+  },
+  {
+    id: 'bielun',
+    name: 'Bieluń',
+    icon: '🌿',
+    category: 'Deliriant',
+    date: '2024-10',
+    summary: 'Roślina zawierająca toksyczne alkaloidy tropanowe. Wywołuje ciężkie delirium, halucynacje i może być śmiertelna.',
+    riskLevel: 'Ekstremalnie niebezpieczne',
+    duration: '8-24 godziny',
+    reports: 34
+  }
+]
+
+function SubstanceReports() {
   return (
     <>
       <SectionIntro
-        title="Harnessing technology for a brighter future"
+        title="Najnowsze raporty użytkowników"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We believe technology is the answer to the world’s greatest
-          challenges. It’s also the cause, so we find ourselves in bit of a
-          catch 22 situation.
+          Rzeczywiste doświadczenia osób, które używały różnych substancji psychoaktywnych.
+          Dowiedz się o efektach, dawkowaniu i potencjalnych zagrożeniach.
         </p>
       </SectionIntro>
       <Container className="mt-16">
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {caseStudies.map((caseStudy) => (
-            <FadeIn key={caseStudy.href} className="flex">
+          {substanceReports.map((report) => (
+            <FadeIn key={report.id} className="flex">
               <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
-                <h3>
-                  <Link href={caseStudy.href}>
+                <div className="flex items-start justify-between">
+                  <div className="text-4xl">{report.icon}</div>
+                  <span className={`rounded-full px-3 py-1 text-xs font-medium ${
+                    report.riskLevel === 'Ekstremalnie niebezpieczne' 
+                      ? 'bg-red-100 text-red-800' 
+                      : report.riskLevel === 'Wysokie ryzyko'
+                      ? 'bg-orange-100 text-orange-800'
+                      : 'bg-yellow-100 text-yellow-800'
+                  }`}>
+                    {report.riskLevel}
+                  </span>
+                </div>
+                <h3 className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                  <Link href={`/substancje/${report.id}`}>
                     <span className="absolute inset-0 rounded-3xl" />
-                    <Image
-                      src={caseStudy.logo}
-                      alt={caseStudy.client}
-                      className="h-16 w-16"
-                      unoptimized
-                    />
+                    {report.name}
                   </Link>
                 </h3>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                  <time
-                    dateTime={caseStudy.date.split('-')[0]}
-                    className="font-semibold"
-                  >
-                    {caseStudy.date.split('-')[0]}
-                  </time>
-                  <span className="text-neutral-300" aria-hidden="true">
-                    /
-                  </span>
-                  <span>Case study</span>
-                </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
-                  {caseStudy.title}
+                <p className="mt-2 text-sm font-semibold text-neutral-600">
+                  {report.category}
                 </p>
                 <p className="mt-4 text-base text-neutral-600">
-                  {caseStudy.description}
+                  {report.summary}
                 </p>
+                <div className="mt-6 flex items-center gap-4 text-sm text-neutral-600">
+                  <div className="flex items-center gap-1">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>{report.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                    </svg>
+                    <span>{report.reports} raportów</span>
+                  </div>
+                </div>
               </article>
             </FadeIn>
           ))}
         </FadeInStagger>
+        <FadeIn className="mt-10 flex justify-center">
+          <Link
+            href="/raporty"
+            className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
+          >
+            Zobacz wszystkie raporty
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
+        </FadeIn>
       </Container>
     </>
   )
@@ -189,8 +238,6 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-  let caseStudies = (await loadCaseStudies()).slice(0, 3)
-
   return (
     <RootLayout>
       <Container className="mt-24 sm:mt-32 md:mt-56">
@@ -206,7 +253,7 @@ export default async function Home() {
 
       <SubstanceGroups />
 
-      <CaseStudies caseStudies={caseStudies} />
+      <SubstanceReports />
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
