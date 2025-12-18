@@ -73,7 +73,7 @@ function Header({
           <p className={`text-5xl font-black ${invert ? 'text-white' : 'text-black'}`}>neuroo</p>
         </Link>
         <div className="flex items-center gap-x-8">
-          <Button href="/contact" invert={invert}>
+          <Button href="/redukcja-szkod" invert={invert}>
             Redukcja szkód
           </Button>
           <button

@@ -7,32 +7,33 @@ import { socialMediaProfiles } from '@/components/SocialMedia'
 
 const navigation = [
   {
-    title: 'Work',
+    title: 'Substancje',
     links: [
-      { title: 'FamilyFund', href: '/work/family-fund' },
-      { title: 'Unseal', href: '/work/unseal' },
-      { title: 'Phobia', href: '/work/phobia' },
+      { title: 'Encyklopedia', href: '/kategorie' },
+      { title: 'Psychodeliki', href: '/kategorie/psychodeliki' },
+      { title: 'Stymulanty', href: '/kategorie/stymulanty' },
+      { title: 'Depresanty', href: '/kategorie/depresanty' },
       {
         title: (
           <>
-            See all <span aria-hidden="true">&rarr;</span>
+            Zobacz wszystkie <span aria-hidden="true">&rarr;</span>
           </>
         ),
-        href: '/work',
+        href: '/kategorie',
       },
     ],
   },
   {
-    title: 'Company',
+    title: 'Informacje',
     links: [
-      { title: 'About', href: '/about' },
-      { title: 'Process', href: '/process' },
-      { title: 'Blog', href: '/blog' },
-      { title: 'Contact us', href: '/contact' },
+      { title: 'Redukcja Szkód', href: '/redukcja-szkod' },
+      { title: 'Raporty', href: '/raporty' },
+      { title: 'O Projekcie', href: '/about' },
+      { title: 'Kontakt', href: '/contact' },
     ],
   },
   {
-    title: 'Connect',
+    title: 'Społeczność',
     links: socialMediaProfiles,
   },
 ]
@@ -82,18 +83,18 @@ function NewsletterForm() {
   return (
     <form className="max-w-sm">
       <h2 className="font-display text-sm font-semibold tracking-wider text-neutral-950">
-        Sign up for our newsletter
+        Zapisz się na newsletter
       </h2>
       <p className="mt-4 text-sm text-neutral-700">
-        Subscribe to get the latest design news, articles, resources and
-        inspiration.
+        Otrzymuj aktualizacje o nowych substancjach, badaniach naukowych
+        i zasadach bezpieczeństwa.
       </p>
       <div className="relative mt-6">
         <input
           type="email"
-          placeholder="Email address"
+          placeholder="Adres email"
           autoComplete="email"
-          aria-label="Email address"
+          aria-label="Adres email"
           className="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pr-20 pl-6 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:ring-neutral-950/5 focus:outline-hidden"
         />
         <div className="absolute inset-y-1 right-1 flex justify-end">
@@ -114,18 +115,17 @@ export function Footer() {
   return (
     <Container as="footer" className="mt-24 w-full sm:mt-32 lg:mt-40">
       <FadeIn>
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-          <Navigation />
-          <div className="flex lg:justify-end">
-            <NewsletterForm />
-          </div>
-        </div>
-        <div className="mt-24 mb-20 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2"></div>
+        <div className="mt-24 mb-20 flex flex-wrap items-center justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
           <Link href="/" aria-label="Home">
-            <Logo className="h-8" fillOnHover />
+            <p
+              className={`text-5xl font-black`}
+            >
+              neuroo
+            </p>
           </Link>
           <p className="text-sm text-neutral-700">
-            © Studio Agency Inc. {new Date().getFullYear()}
+            © Neuroo {new Date().getFullYear()} • Edukacja i harm reduction
           </p>
         </div>
       </FadeIn>
