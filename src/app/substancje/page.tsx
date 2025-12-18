@@ -1,9 +1,9 @@
 import { type Metadata } from 'next'
-import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { RootLayout } from '@/components/RootLayout'
 import { CATEGORIES, type CategoryInfo } from '@/lib/substances'
+import { SubstanceSearch } from '@/components/SubstanceSearch'
 
 export const metadata: Metadata = {
   title: 'Wszystkie Substancje | Neuroo',
@@ -66,15 +66,6 @@ export default function SubstancjePage() {
     a.name.localeCompare(b.name, 'pl')
   )
 
-  const groupedSubstances = substances.reduce<Record<string, SubstanceItem[]>>((acc, substance) => {
-    const firstLetter = substance.name[0].toUpperCase()
-    if (!acc[firstLetter]) {
-      acc[firstLetter] = []
-    }
-    acc[firstLetter].push(substance)
-    return acc
-  }, {})
-
   const categories = Object.values(CATEGORIES) as CategoryInfo[]
 
   return (
@@ -91,42 +82,7 @@ export default function SubstancjePage() {
           </p>
         </FadeIn>
 
-        <div className="mt-16 space-y-12">
-          {Object.entries(groupedSubstances).map(([letter, subs]) => (
-            <FadeIn key={letter}>
-              <div>
-                <h2 className="font-display text-4xl font-semibold text-neutral-950 border-b border-neutral-200 pb-2">
-                  {letter}
-                </h2>
-                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {subs.map((substance) => (
-                    <Link
-                      key={substance.id}
-                      href={`/kategorie/${substance.category}/${substance.id}`}
-                      className="group relative rounded-lg border border-neutral-200 bg-white p-4 hover:border-neutral-900 hover:shadow-md transition-all"
-                    >
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <h3 className="font-display text-lg font-semibold text-neutral-950 group-hover:text-neutral-700 transition">
-                            {substance.name}
-                          </h3>
-                          {substance.commonNames && substance.commonNames.length > 0 && (
-                            <p className="mt-1 text-sm text-neutral-600">
-                              {substance.commonNames.slice(0, 3).join(', ')}
-                            </p>
-                          )}
-                        </div>
-                        <span className="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs font-medium text-neutral-800">
-                          {categories.find(c => c.slug === substance.category)?.nazwa || substance.category}
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        <SubstanceSearch substances={substances} categories={categories} />
       </Container>
     </RootLayout>
   )

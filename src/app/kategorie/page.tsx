@@ -2,8 +2,8 @@ import { type Metadata } from 'next'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { RootLayout } from '@/components/RootLayout'
-import { CategoryGrid } from '@/components/substances'
 import { CATEGORIES, type CategoryInfo } from '@/lib/substances'
+import { CategorySearch } from '@/components/CategorySearch'
 
 export const metadata: Metadata = {
   title: 'Encyklopedia Substancji Psychoaktywnych | Neuroo',
@@ -27,15 +27,7 @@ export default function KategoriePage() {
           </p>
         </FadeIn>
 
-        <div className="mt-16">
-          <FadeIn>
-            <h2 className="font-display text-2xl font-semibold text-neutral-950">
-              Kategorie substancji
-            </h2>
-          </FadeIn>
-
-          <CategoryGrid categories={categories} className="mt-10" />
-        </div>
+        <CategorySearch categories={categories} />
       </Container>
     </RootLayout>
   )
