@@ -2,6 +2,10 @@
 @import './base.css';
 @import './typography.css' layer(components);
 
+@utility hyphens-auto {
+  hyphens: auto;
+}
+
 @theme {
   --text-*: initial;
   --text-xs: 0.75rem;

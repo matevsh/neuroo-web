@@ -24,7 +24,7 @@ export function SubstanceInfoBox({
           <h3 className="font-display text-lg font-semibold text-neutral-950">
             {substance.nazwa}
           </h3>
-          <p className="mt-1 text-sm text-neutral-600">
+          <p className="mt-1 break-words hyphens-auto text-sm text-neutral-600">
             {substance.nazwaSystematyczna}
           </p>
         </div>
@@ -38,7 +38,7 @@ export function SubstanceInfoBox({
             <dt className="text-sm font-medium text-neutral-500">
               Wzór chemiczny
             </dt>
-            <dd className="mt-1 font-mono text-sm text-neutral-950">
+            <dd className="mt-1 break-all font-mono text-sm text-neutral-950">
               {substance.wzorChemiczny}
             </dd>
           </div>
@@ -50,7 +50,7 @@ export function SubstanceInfoBox({
             <dt className="text-sm font-medium text-neutral-500">
               Grupa chemiczna
             </dt>
-            <dd className="mt-1 text-sm text-neutral-950">
+            <dd className="mt-1 break-words hyphens-auto text-sm text-neutral-950">
               {substance.grupaChemiczna}
             </dd>
           </div>
@@ -146,8 +146,8 @@ export function SubstanceInfoBox({
           <ul className="space-y-1.5 text-sm text-neutral-600">
             {substance.efektyGlowne.slice(0, 5).map((efekt, index) => (
               <li key={index} className="flex items-start gap-2">
-                <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neutral-400" />
-                <span>{efekt}</span>
+                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                <span className="break-words hyphens-auto">{efekt}</span>
               </li>
             ))}
           </ul>

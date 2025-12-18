@@ -36,7 +36,7 @@ export function SubstanceStats({ substance, className }: SubstanceStatsProps) {
       {stats.map((stat) => (
         <div key={stat.label}>
           <p className="text-sm text-neutral-500">{stat.label}</p>
-          <p className="mt-1 font-display text-2xl font-semibold text-neutral-950">
+          <p className="mt-1 font-display text-2xl font-semibold break-all hyphens-manual text-neutral-950">
             {stat.value}
           </p>
         </div>
