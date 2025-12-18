@@ -27,35 +27,6 @@ export default function KategoriePage() {
           </p>
         </FadeIn>
 
-        <FadeIn className="mt-10">
-          <div className="rounded-2xl bg-amber-50 p-6">
-            <div className="flex items-start gap-4">
-              <svg
-                className="h-6 w-6 flex-shrink-0 text-amber-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
-                />
-              </svg>
-              <div className="text-sm text-amber-800">
-                <p className="font-semibold">Informacja</p>
-                <p className="mt-1">
-                  Ta encyklopedia ma charakter wylacznie edukacyjny. Nie zachecamy
-                  do uzywania substancji psychoaktywnych. Uzywanie wielu z
-                  opisanych substancji jest nielegalne i moze byc niebezpieczne
-                  dla zdrowia.
-                </p>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
-
         <div className="mt-16">
           <FadeIn>
             <h2 className="font-display text-2xl font-semibold text-neutral-950">

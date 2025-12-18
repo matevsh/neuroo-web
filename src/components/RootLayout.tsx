@@ -20,6 +20,7 @@ import { GridPattern } from '@/components/GridPattern'
 import { Logo, Logomark } from '@/components/Logo'
 import { Offices } from '@/components/Offices'
 import { SocialMedia } from '@/components/SocialMedia'
+import { PostProcessingSettingsButton } from '@/components/PostProcessingSettings'
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean
@@ -75,27 +76,30 @@ function Header({
           <Button href="/contact" invert={invert}>
             Redukcja szkód
           </Button>
-          <button
-            ref={toggleRef}
-            type="button"
-            onClick={onToggle}
-            aria-expanded={expanded ? 'true' : 'false'}
-            aria-controls={panelId}
-            className={clsx(
-              'group -m-2.5 rounded-full p-2.5 transition',
-              invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
-            )}
-            aria-label="Toggle navigation"
-          >
-            <Icon
+          <div className="flex items-center gap-x-2">
+            <PostProcessingSettingsButton />
+            <button
+              ref={toggleRef}
+              type="button"
+              onClick={onToggle}
+              aria-expanded={expanded ? 'true' : 'false'}
+              aria-controls={panelId}
               className={clsx(
-                'h-6 w-6',
-                invert
-                  ? 'fill-white group-hover:fill-neutral-200'
-                  : 'fill-neutral-950 group-hover:fill-neutral-700',
+                'group -m-2.5 rounded-full p-2.5 transition',
+                invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
               )}
-            />
-          </button>
+              aria-label="Toggle navigation"
+            >
+              <Icon
+                className={clsx(
+                  'h-6 w-6',
+                  invert
+                    ? 'fill-white group-hover:fill-neutral-200'
+                    : 'fill-neutral-950 group-hover:fill-neutral-700',
+                )}
+              />
+            </button>
+          </div>
         </div>
       </div>
     </Container>

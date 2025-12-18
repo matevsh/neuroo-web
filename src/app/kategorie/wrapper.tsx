@@ -31,13 +31,6 @@ export default async function SubstanceWrapper({
 
         <Container className="mt-16 sm:mt-24">
           <FadeIn>
-            <WarningBanner variant="danger">
-              Ta strona ma charakter wylacznie edukacyjny i informacyjny. Uzywanie
-              substancji kontrolowanych jest nielegalne i moze byc niebezpieczne dla
-              zdrowia. Informacje przedstawione tutaj nie stanowia porady medycznej
-              ani zachety do uzywania jakichkolwiek substancji.
-            </WarningBanner>
-
             <MDXComponents.wrapper>{children}</MDXComponents.wrapper>
           </FadeIn>
         </Container>

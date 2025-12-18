@@ -1,5 +1,24 @@
 # Changelog
 
+## 2024-12-18
+
+### 🎨 HarmReductionBox v3.0 - Grouped Layout
+
+- **Redesigned to match InteractionsMatrix grouped style**
+  - Each section (Zasady ogólne, Set i Setting, Przeciwwskazania, etc.) as separate card
+  - Semantic colors: Green (general), Blue (context), Red (danger), Orange (warning), Violet (medical)
+  - 2-column responsive grid for items
+  - Individual section icons with hover animations
+  - Progress bars (8px → 12px on hover) and item counters
+  - Emphasized sections show warning icons
+  - Backward compatible with custom children (uses legacy layout)
+
+### 🎨 Components Redesign (v2.0)
+
+- **HarmReductionBox** - Ultra-minimalist with staggered animations
+- **InteractionsMatrix** - Semantic grouping with visual hierarchy
+- Full documentation added (DESIGN_CHANGES.md, VISUAL_STYLE_GUIDE.md, etc.)
+
 ## 2025-09-01
 
 - Fix missing `inert` attribute due to React 19 update ([#1743](https://github.com/tailwindlabs/tailwind-plus-issues/issues/1743))
