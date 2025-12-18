@@ -20,7 +20,7 @@ import { GridPattern } from '@/components/GridPattern'
 import { Logo, Logomark } from '@/components/Logo'
 import { Offices } from '@/components/Offices'
 import { SocialMedia } from '@/components/SocialMedia'
-import { PostProcessingSettingsButton } from '@/components/PostProcessingSettings'
+import { PostProcessingSettingsInline } from '@/components/PostProcessingSettings'
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean
@@ -76,30 +76,27 @@ function Header({
           <Button href="/contact" invert={invert}>
             Redukcja szkód
           </Button>
-          <div className="flex items-center gap-x-2">
-            <PostProcessingSettingsButton />
-            <button
-              ref={toggleRef}
-              type="button"
-              onClick={onToggle}
-              aria-expanded={expanded ? 'true' : 'false'}
-              aria-controls={panelId}
+          <button
+            ref={toggleRef}
+            type="button"
+            onClick={onToggle}
+            aria-expanded={expanded ? 'true' : 'false'}
+            aria-controls={panelId}
+            className={clsx(
+              'group -m-2.5 rounded-full p-2.5 transition',
+              invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
+            )}
+            aria-label="Toggle navigation"
+          >
+            <Icon
               className={clsx(
-                'group -m-2.5 rounded-full p-2.5 transition',
-                invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
+                'h-6 w-6',
+                invert
+                  ? 'fill-white group-hover:fill-neutral-200'
+                  : 'fill-neutral-950 group-hover:fill-neutral-700',
               )}
-              aria-label="Toggle navigation"
-            >
-              <Icon
-                className={clsx(
-                  'h-6 w-6',
-                  invert
-                    ? 'fill-white group-hover:fill-neutral-200'
-                    : 'fill-neutral-950 group-hover:fill-neutral-700',
-                )}
-              />
-            </button>
-          </div>
+            />
+          </button>
         </div>
       </div>
     </Container>
@@ -138,12 +135,12 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Our Work</NavigationItem>
-        <NavigationItem href="/about">About Us</NavigationItem>
+        <NavigationItem href="/kategorie">Kategorie</NavigationItem>
+        <NavigationItem href="/substancje">Substancje</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Our Process</NavigationItem>
-        <NavigationItem href="/blog">Blog</NavigationItem>
+        <NavigationItem href="/raporty">Raporty</NavigationItem>
+        <NavigationItem href="/contact">Kontakt</NavigationItem>
       </NavigationRow>
     </nav>
   )
@@ -229,24 +226,14 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
               />
             </div>
             <Navigation />
-            <div className="relative bg-neutral-950 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-neutral-800">
+            <div className="relative bg-neutral-950 border-t border-neutral-800">
               <Container>
-                <div className="grid grid-cols-1 gap-y-10 pt-10 pb-16 sm:grid-cols-2 sm:pt-16">
-                  <div>
-                    <h2 className="font-display text-base font-semibold text-white">
-                      Our offices
-                    </h2>
-                    <Offices
-                      invert
-                      className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"
-                    />
-                  </div>
-                  <div className="sm:border-l sm:border-transparent sm:pl-16">
-                    <h2 className="font-display text-base font-semibold text-white">
-                      Follow us
-                    </h2>
-                    <SocialMedia className="mt-6" invert />
-                  </div>
+                <div className="py-10">
+                  <h2 className="font-display text-base font-semibold text-white mb-4 flex items-center gap-2">
+                    <span className="text-xl">⚙️</span>
+                    Ustawienia efektów wizualnych
+                  </h2>
+                  <PostProcessingSettingsInline />
                 </div>
               </Container>
             </div>

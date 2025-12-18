@@ -175,6 +175,73 @@ export function PostProcessingSettingsPanel() {
   )
 }
 
+export function PostProcessingSettingsInline() {
+  const { gradientEnabled, grainEnabled, setGradientEnabled, setGrainEnabled } =
+    usePostProcessing()
+
+  return (
+    <div className="space-y-4">
+      <label className="flex items-center justify-between cursor-pointer group">
+        <div>
+          <span className="text-white text-base font-medium block group-hover:text-neutral-300 transition">
+            Gradient tła
+          </span>
+          <span className="text-sm text-neutral-400 mt-0.5 block">
+            Kolorowy gradient w tle strony
+          </span>
+        </div>
+        <button
+          type="button"
+          onClick={() => setGradientEnabled(!gradientEnabled)}
+          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors flex-shrink-0 ${
+            gradientEnabled ? 'bg-emerald-600' : 'bg-neutral-700'
+          }`}
+          role="switch"
+          aria-checked={gradientEnabled}
+        >
+          <span
+            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+              gradientEnabled ? 'translate-x-6' : 'translate-x-1'
+            }`}
+          />
+        </button>
+      </label>
+
+      <label className="flex items-center justify-between cursor-pointer group">
+        <div>
+          <span className="text-white text-base font-medium block group-hover:text-neutral-300 transition">
+            Ziarno (grain)
+          </span>
+          <span className="text-sm text-neutral-400 mt-0.5 block">
+            Efekt szumu filmowego
+          </span>
+        </div>
+        <button
+          type="button"
+          onClick={() => setGrainEnabled(!grainEnabled)}
+          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors flex-shrink-0 ${
+            grainEnabled ? 'bg-emerald-600' : 'bg-neutral-700'
+          }`}
+          role="switch"
+          aria-checked={grainEnabled}
+        >
+          <span
+            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+              grainEnabled ? 'translate-x-6' : 'translate-x-1'
+            }`}
+          />
+        </button>
+      </label>
+
+      <div className="pt-2 px-3 py-3 bg-neutral-800/50 rounded-lg">
+        <p className="text-sm text-neutral-300">
+          💡 Wyłączenie efektów może poprawić wydajność na słabszych urządzeniach.
+        </p>
+      </div>
+    </div>
+  )
+}
+
 export function PostProcessingSettingsButton() {
   const [isOpen, setIsOpen] = useState(false)
   const { gradientEnabled, grainEnabled, setGradientEnabled, setGrainEnabled } =
