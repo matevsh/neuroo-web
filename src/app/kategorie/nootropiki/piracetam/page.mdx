@@ -1,0 +1,142 @@
+export const substance = {
+  nazwa: 'Piracetam',
+  nazwyAlternatywne: ['Nootropil', 'Lucetam', 'Pierwotny racetam'],
+  nazwaSystematyczna: '2-okso-1-pirolidynoacetamid',
+  wzorChemiczny: 'C6H10N2O2',
+  kategoria: 'nootropiki',
+  slug: 'piracetam',
+
+  klasaPrawna: 'legalna',
+  grupaChemiczna: 'Racetamy',
+
+  efektyGlowne: [
+    'Poprawa pamięci',
+    'Lepsza płynność werbalna',
+    'Poprawa koncentracji',
+    'Zwiększona kreatywność',
+    'Neuroprotekcja',
+  ],
+  efektyUboczne: [
+    'Bóle głowy (zwykle z braku choliny)',
+    'Bezsenność',
+    'Pobudzenie',
+    'Problemy żołądkowe',
+  ],
+
+  czasDzialania: {
+    poczatek: '30-60 min',
+    szczyt: '1-2 h',
+    calkowity: '5-8 h',
+    popierwsze: 'pełne efekty po 1-2 tygodniach regularnego użycia',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '400-800 mg',
+      lekka: '800-1600 mg',
+      srednia: '1600-2400 mg',
+      silna: '2400-4800 mg',
+      bardzoSilna: '4800+ mg',
+      jednostka: 'mg',
+      uwagi: 'Dawka terapeutyczna to 2400-4800mg/dzień w dawkach podzielonych. Wymaga suplementacji choliny.',
+    },
+  ],
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Suplementuj cholinę (CDP-cholina, Alpha-GPC)',
+      'Dawkuj regularnie - efekty narastają w czasie',
+      'Dziel dawkę na 2-3 podania dziennie',
+      'Bądź cierpliwy - pełne efekty po 1-2 tygodniach',
+    ],
+    setISetting: [
+      'Stosuj codziennie dla najlepszych efektów',
+      'Prowadź dziennik efektów',
+    ],
+    przeciwwskazania: [
+      'Zaburzenia krzepnięcia krwi',
+      'Niewydolność nerek (piracetam wydalany nerkami)',
+    ],
+    znakiOstrzegawcze: [
+      'Silne bóle głowy (dodaj cholinę)',
+      'Nadmierne pobudzenie',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Leki przeciwzakrzepowe', poziom: 'ostrożność', opis: 'Piracetam może nasilać ich działanie.' },
+    { substancja: 'Stymulanty', poziom: 'synergia', opis: 'Może poprawiać funkcje poznawcze łącznie.' },
+    { substancja: 'Cholina', poziom: 'synergia', opis: 'ZALECANA kombinacja - zapobiega bólom głowy.' },
+  ],
+
+  opis: 'Piracetam to pierwszy i najbardziej zbadany racetam. Poprawia pamięć i funkcje poznawcze. Wymaga suplementacji choliny. Efekty narastają przy regularnym stosowaniu.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['modafinil', 'l-teanina'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest piracetam?
+
+Piracetam to pierwszy syntetyczny nootropik, opracowany w 1964 roku przez rumuńskiego chemika Corneliu Giurgea (który też wymyślił termin "nootropik"). Jest prototypem całej rodziny racetamów.
+
+Piracetam jest stosowany medycznie w niektórych krajach w leczeniu zaburzeń poznawczych, dysleksji i zawrotów głowy.
+
+<SubstanceStats substance={substance} />
+
+## Mechanizm działania
+
+Piracetam:
+- Moduluje receptory AMPA i NMDA (glutaminian)
+- Poprawia przepływ krwi w mózgu
+- Zwiększa płynność błon komórkowych
+- Poprawia komunikację między półkulami mózgu
+- Zwiększa zużycie choliny
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Cholina jest kluczowa!">
+Piracetam zwiększa zużycie choliny w mózgu. Bez suplementacji możesz doświadczyć:
+- Bólów głowy (najczęstszy efekt uboczny)
+- Zmniejszonej skuteczności
+
+**Zalecane źródła choliny:**
+- CDP-cholina (citicholina): 250-500mg
+- Alpha-GPC: 300-600mg
+- Lecytyna: 1-3g (słabsze źródło)
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Cierpliwość jest kluczowa
+
+Piracetam nie działa jak stymulant - nie poczujesz natychmiastowego "kopnięcia". Efekty narastają stopniowo przy regularnym stosowaniu. Wielu użytkowników zauważa pełne efekty dopiero po 1-2 tygodniach.
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Rodzina racetamów
+
+Piracetam dał początek całej rodzinie pochodnych:
+
+| Racetam | Siła względem piracetamu | Charakterystyka |
+|---------|-------------------------|-----------------|
+| Piracetam | 1x | Podstawowy, dobrze zbadany |
+| Aniracetam | 5x | Więcej efektów anxiolitycznych |
+| Oxiracetam | 5x | Więcej stymulacji |
+| Pramiracetam | 15x | Najsilniejszy dla pamięci |
+| Fenylpiracetam | 60x | Stymulujący, zakaz w sporcie |
+
+## Aspekty prawne
+
+Piracetam jest dostępny w Polsce na receptę (Nootropil). W niektórych krajach jest suplementem diety.

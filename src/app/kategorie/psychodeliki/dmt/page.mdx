@@ -1,0 +1,150 @@
+export const substance = {
+  nazwa: 'DMT',
+  nazwyAlternatywne: ['Dimetylotryptamina', 'Molekula duszy', 'Spirit molecule', 'Dimitri'],
+  nazwaSystematyczna: 'N,N-dimetylotryptamina',
+  wzorChemiczny: 'C12H16N2',
+  kategoria: 'psychodeliki',
+  slug: 'dmt',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Tryptaminy',
+
+  efektyGlowne: [
+    'Intensywne wizje',
+    'Doswiadczenia mistyczne',
+    'Spotkania z istotami',
+    'Rozpad ego',
+    'Zmiana percepcji czasu',
+    'Poczucie transcendencji',
+  ],
+  efektyUboczne: [
+    'Przytlaczajaca intensywnosc',
+    'Dezorientacja',
+    'Przyspieszony puls',
+    'Podwyzszone cisnienie',
+    'Nudnosci (przy ayahuasce)',
+  ],
+
+  czasDzialania: {
+    poczatek: '0-2 min (wziewnie)',
+    szczyt: '3-10 min',
+    calkowity: '15-30 min',
+    popierwsze: 'do 1 h',
+  },
+
+  osCzasu: [
+    { nazwa: 'Wchodzenie', poczatek: '0 s', koniec: '60 s', opis: 'Blyskaiwczne narastanie, buzowanie w uszach' },
+    { nazwa: 'Szczyt', poczatek: '1 min', koniec: '10 min', opis: 'Pelna immersja, wizje, breakthrough' },
+    { nazwa: 'Schodzenie', poczatek: '10 min', koniec: '30 min', opis: 'Powrot do normalnosci, integracja' },
+  ],
+
+  dawkowanie: [
+    {
+      route: 'wziewnie',
+      prog: '5-10 mg',
+      lekka: '10-20 mg',
+      srednia: '20-40 mg',
+      silna: '40-60 mg',
+      bardzoSilna: '60+ mg',
+      jednostka: 'mg',
+      uwagi: 'Breakthrough wymaga zwykle 40-50mg waporyzowanego prawidlowo.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'brak',
+    polowa: 'brak',
+    zero: 'natychmiast',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Miej trip-sittera',
+      'Poloz sie wygodnie przed zazyciemn',
+      'Uzywaj precyzyjnej wagi',
+      'Nie uzywaj sam',
+      'Zacznij od niskiej dawki',
+    ],
+    setISetting: [
+      'Wybierz ciemne, ciche miejsce',
+      'Usun przedmioty ktore moga byc niebezpieczne',
+      'Badz w pozytywnym nastawieniu',
+      'Oddaj kontrole doswiadczeniu',
+    ],
+    przeciwwskazania: [
+      'Historia psychoz',
+      'Choroby serca',
+      'Przyjmowanie MAOI (chyba ze swiadomie jako ayahuasca)',
+      'Silny lek przed doswiadczeniem',
+    ],
+    znakiOstrzegawcze: [
+      'Panika przed wchodzeniem',
+      'Problemy z oddechem',
+    ],
+    pierwszaPomoc: [
+      'Efekty sa krotkie - uspokajaj i czekaj',
+      'Mow lagodnie',
+      'Nie dotykaj bez pozwolenia',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'MAOI', poziom: 'niebezpieczna', opis: 'Tworzy ayahuasce - znacznie przedluza i wzmacnia efekty. Wymaga doswiadczenia.' },
+    { substancja: 'SSRI', poziom: 'ostrożność', opis: 'Moga oslabic efekty.' },
+    { substancja: 'Stymulanty', poziom: 'ostrożność', opis: 'Zwiekszaja obciazenie serca.' },
+  ],
+
+  opis: 'DMT to najpotezniejszy naturalnie wystepujacy psychodelik. Waporyzowane dziala 15-30 min, wywolujac intensywne wizje i doswiadczenia mistyczne. Wystepuje w wielu roslinach i w ludzkim mozgu.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['lsd', 'psylocybina'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest DMT?
+
+DMT (N,N-dimetylotryptamina) to naturalnie wystepujacy psychodelik z grupy tryptamin. Znajduje sie w wielu roslinach (np. Psychotria viridis, Mimosa hostilis) oraz w sladowych ilosciach w ludzkim mozgu i plynie mozgowo-rdzeniowym.
+
+Waporyzowane DMT jest jednym z najintensywniejszych znanych psychodelikow. Efekty pojawiaja sie w ciagu sekund i trwaja zaledwie 15-30 minut, ale sa opisywane jako "wiecznosc w kilka minut".
+
+<SubstanceStats substance={substance} />
+
+## Breakthrough
+
+"Breakthrough" to pelne doswiadczenie DMT - calkowite zanurzenie w wizjach, rozpad ego i poczucie przejscia do innego wymiaru. Uzytkownicy czesto opisuja:
+- Spotkania z "istotami" lub "elfami"
+- Wizje geometrycznych struktur
+- Poczucie smierci i odrodzenia
+- Doswiadczenia mistyczne i duchowe
+
+## Efekty
+
+<EffectsTimeline phases={substance.osCzasu} />
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Technika waporyzacji">
+DMT wymaga prawidlowej techniki:
+- Temperatura 160-180°C
+- Wolne, gleboki wdechy
+- Trzymanie dymu 10-20 sekund
+- Zwykle potrzebne 2-3 wdechy dla breakthrough
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Aspekty prawne
+
+DMT jest substancja kontrolowana w Polsce. Niektore rosliny zawierajace DMT sa legalne do posiadania.

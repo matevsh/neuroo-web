@@ -15,14 +15,14 @@ import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 
 const substanceGroups = [
-  { name: 'Psychodeliki', icon: '🍄', description: 'LSD, psylocybina, meskalina' },
-  { name: 'Dysocjanty', icon: '🌀', description: 'Ketamina, DXM, PCP' },
-  { name: 'Stymulanty', icon: '⚡', description: 'Amfetamina, kofeina, MDMA' },
-  { name: 'Depresanty', icon: '😴', description: 'Alkohol, benzodiazepiny, GHB' },
-  { name: 'Kannabinoidy', icon: '🌿', description: 'THC, CBD, syntetyczne kannabinoidy' },
-  { name: 'Opioidy', icon: '💊', description: 'Morfina, kodeina, fentanyl' },
-  { name: 'Empatogeny', icon: '❤️', description: 'MDMA, MDA, 6-APB' },
-  { name: 'Nootropiki', icon: '🧠', description: 'Modafinil, racetamy, L-teanina' },
+  { name: 'Psychodeliki', slug: 'psychodeliki', icon: '🍄', description: 'LSD, psylocybina, DMT' },
+  { name: 'Dysocjanty', slug: 'dysocjanty', icon: '🌀', description: 'Ketamina, DXM, PCP' },
+  { name: 'Stymulanty', slug: 'stymulanty', icon: '⚡', description: 'Amfetamina, kokaina, kofeina' },
+  { name: 'Depresanty', slug: 'depresanty', icon: '😴', description: 'Alkohol, benzodiazepiny, GHB' },
+  { name: 'Kannabinoidy', slug: 'kannabinoidy', icon: '🌿', description: 'THC, CBD, syntetyki' },
+  { name: 'Opioidy', slug: 'opioidy', icon: '💊', description: 'Morfina, fentanyl, kodeina' },
+  { name: 'Empatogeny', slug: 'empatogeny', icon: '❤️', description: 'MDMA, MDA, 6-APB' },
+  { name: 'Nootropiki', slug: 'nootropiki', icon: '🧠', description: 'Modafinil, piracetam, L-teanina' },
 ]
 
 function SubstanceGroups() {
@@ -43,16 +43,30 @@ function SubstanceGroups() {
             {substanceGroups.map((group) => (
               <li key={group.name}>
                 <FadeIn>
-                  <div className="group relative flex flex-col items-center justify-center rounded-2xl bg-neutral-900 p-6 transition hover:bg-neutral-800">
+                  <Link
+                    href={`/kategorie/${group.slug}`}
+                    className="group relative flex flex-col items-center justify-center rounded-2xl bg-neutral-900 p-6 transition hover:bg-neutral-800"
+                  >
                     <div className="text-5xl mb-3">{group.icon}</div>
                     <h3 className="text-lg font-semibold text-white mb-2">{group.name}</h3>
                     <p className="text-xs text-neutral-400 text-center">{group.description}</p>
-                  </div>
+                  </Link>
                 </FadeIn>
               </li>
             ))}
           </ul>
         </FadeInStagger>
+        <FadeIn className="mt-10 flex justify-center">
+          <Link
+            href="/kategorie"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-200"
+          >
+            Zobacz pelna encyklopedie
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
+        </FadeIn>
       </Container>
     </div>
   )

@@ -1,0 +1,148 @@
+export const substance = {
+  nazwa: 'Kodeina',
+  nazwyAlternatywne: ['Codeine', 'Lean', 'Purple drank', 'Sizzurp'],
+  nazwaSystematyczna: '3-metylomorfina',
+  wzorChemiczny: 'C18H21NO3',
+  kategoria: 'opioidy',
+  slug: 'kodeina',
+
+  klasaPrawna: 'kontrolowana',
+  grupaChemiczna: 'Opiaty naturalne',
+
+  efektyGlowne: [
+    'Analgezja',
+    'Łagodna euforia',
+    'Relaksacja',
+    'Tłumienie kaszlu',
+    'Senność',
+  ],
+  efektyUboczne: [
+    'Nudności',
+    'Zaparcia',
+    'Senność',
+    'Świąd',
+    'Depresja oddechowa (przy wysokich dawkach)',
+  ],
+
+  czasDzialania: {
+    poczatek: '30-60 min',
+    szczyt: '1-2 h',
+    calkowity: '4-6 h',
+    popierwsze: 'do 8 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '15-30 mg',
+      lekka: '30-60 mg',
+      srednia: '60-120 mg',
+      silna: '120-200 mg',
+      bardzoSilna: '200+ mg',
+      jednostka: 'mg',
+      uwagi: 'Kodeina jest prekursorem - organizm zamienia ją w morfinę. 5-10% ludzi to "slow metabolizers" (słabe efekty).',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'tygodnie',
+    polowa: 'dni',
+    zero: '1-2 tygodnie',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Nie przekraczaj 400mg/dzień (toksyczność)',
+      'Unikaj produktów z paracetamolem w dużych dawkach',
+      'Nie mieszaj z alkoholem',
+      'Kodeina też uzależnia',
+      'Miej nalokson na wszelki wypadek',
+    ],
+    setISetting: [
+      'Bezpieczne otoczenie',
+      'Nie prowadź',
+    ],
+    przeciwwskazania: [
+      'Problemy oddechowe',
+      'Choroby wątroby',
+      'Spożycie alkoholu',
+    ],
+    znakiOstrzegawcze: [
+      'Wolny oddech',
+      'Silna senność',
+      'Nudności i wymioty',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'niebezpieczna', opis: 'Nasilona sedacja i depresja oddechowa.' },
+    { substancja: 'Benzodiazepiny', slug: 'benzodiazepiny', kategoria: 'depresanty', poziom: 'niebezpieczna', opis: 'Depresja oddechowa.' },
+    { substancja: 'Inne opioidy', poziom: 'niebezpieczna', opis: 'Sumowanie efektów.' },
+    { substancja: 'SSRI', poziom: 'ostrożność', opis: 'Możliwy zespół serotoninowy przy wysokich dawkach.' },
+  ],
+
+  opis: 'Kodeina to naturalny opioid o słabszym działaniu niż morfina. Stosowana przeciwbólowo i przeciwkaszlowo. Organizm zamienia ją w morfinę. Podstawa "lean" (kodeina + promethazyna + sprite).',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['morfina', 'fentanyl'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest kodeina?
+
+Kodeina (3-metylomorfina) to naturalny opioid występujący w opium obok morfiny. Jest prekursorem - organizm metabolizuje ją do morfiny w wątrobie przez enzym CYP2D6.
+
+Kodeina jest stosowana medycznie jako lek przeciwbólowy i przeciwkaszlowy. Jest znacznie słabsza od morfiny (około 10x słabsza).
+
+<SubstanceStats substance={substance} />
+
+## "Lean" / "Purple drank"
+
+"Lean" to mieszanka kodeiny z promethazyna (antyhistaminik) i napojem (zwykle Sprite), popularna w kulturze hip-hop. Jest niebezpieczna z powodu:
+- Kombinacji depresantów OUN
+- Trudności z dawkowaniem
+- Potencjału uzależniającego
+- Nieprzewidywalnych efektów
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Metabolizm kodeiny">
+Kodeina jest "pro-drug" - dopiero wątroba zamienia ją w aktywną morfinę.
+
+- **5-10% ludzi to "poor metabolizers"** - kodeina na nich prawie nie działa
+- **1-2% to "ultra-rapid metabolizers"** - kodeina działa na nich bardzo silnie, ryzyko przedawkowania
+
+Jeśli kodeina "nie działa" lub działa bardzo silnie - to kwestia genetyki, nie jakości.
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Paracetamol w lekach z kodeiną
+
+Wiele leków łączy kodeinę z paracetamolem. Przy dużych dawkach kodeiny:
+- **Max 4g paracetamolu/dzień** - powyżej uszkodzenie wątroby
+- Oblicz ile paracetamolu przyjmujesz!
+- Lepiej używać czystej kodeiny bez dodatków
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Uzależnienie
+
+Kodeina uzależnia podobnie jak inne opioidy, choć wolniej ze względu na słabsze działanie. Objawami uzależnienia są:
+- Potrzeba zwiększania dawek
+- Objawy odstawienia bez substancji
+- Ciągłe myślenie o zdobyciu leku
+
+## Aspekty prawne
+
+Kodeina jest substancją kontrolowaną w Polsce. Leki z niską zawartością kodeiny są dostępne na receptę.

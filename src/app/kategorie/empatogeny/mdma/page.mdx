@@ -1,0 +1,225 @@
+export const substance = {
+  nazwa: 'MDMA',
+  nazwyAlternatywne: ['Ecstasy', 'XTC', 'Molly', 'Mandy', 'Emma', 'Pigulka milosci'],
+  nazwaSystematyczna: '3,4-metylenodioksymetamfetamina',
+  wzorChemiczny: 'C11H15NO2',
+  kategoria: 'empatogeny',
+  slug: 'mdma',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Fenyloetyloaminy',
+
+  efektyGlowne: [
+    'Euforia',
+    'Empatia i bliskosc emocjonalna',
+    'Zwieksziona towarzyskosc',
+    'Intensyfikacja muzyki',
+    'Poczucie milosci i akceptacji',
+    'Lekkie efekty wizualne',
+  ],
+  efektyUboczne: [
+    'Szczekoscisk (bruksizm)',
+    'Przyspieszony puls',
+    'Podwyzszona temperatura ciala',
+    'Pocenie sie',
+    'Suchość w ustach',
+    'Rozszerzenie zrenic',
+    'Bezsennosc',
+  ],
+
+  czasDzialania: {
+    poczatek: '30-60 min',
+    szczyt: '1.5-2.5 h',
+    calkowity: '3-5 h',
+    popierwsze: 'do 24 h (zejscie)',
+  },
+
+  osCzasu: [
+    { nazwa: 'Wchodzenie', poczatek: '0 min', koniec: '60 min', opis: 'Narastanie energii, lekkie napięcie' },
+    { nazwa: 'Szczyt', poczatek: '1 h', koniec: '2.5 h', opis: 'Pelna euforia, maksymalna empatia' },
+    { nazwa: 'Plateau', poczatek: '2.5 h', koniec: '4 h', opis: 'Stabilne efekty, intensywne rozmowy' },
+    { nazwa: 'Schodzenie', poczatek: '4 h', koniec: '6 h', opis: 'Stopniowe lagodnienie, mecznosc' },
+  ],
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '30 mg',
+      lekka: '50-75 mg',
+      srednia: '75-125 mg',
+      silna: '125-175 mg',
+      bardzoSilna: '175+ mg',
+      jednostka: 'mg',
+      uwagi: 'Zalecana dawka: 1-1.5 mg na kg masy ciala. Nie przekraczaj 1.5 mg/kg.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'natychmiast',
+    polowa: '1 tydzien',
+    zero: '1-3 miesiace (dla pelnej magii)',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Testuj substancje zestawem reagentowym (Marquis, Simon, Mecke)',
+      'Nie przekraczaj 1.5 mg na kg masy ciala',
+      'Zachowaj minimum 6-tygodniowa przerwe miedzy uzyciem',
+      'Pij wode, ale nie za duzo (250-500 ml/h)',
+      'Rob przerwy od tanca co 30-60 min',
+      'Nie mieszaj z alkoholem ani innymi substancjami',
+    ],
+    setISetting: [
+      'Upewnij sie ze jestes w dobrym nastroju',
+      'Wybierz bezpieczne miejsce z dostepem do wody',
+      'Miej przy sobie zaufane osoby',
+      'Zaplanuj nastepny dzien na odpoczynek',
+      'Przygotuj suplementy na zejscie (5-HTP, magnez)',
+    ],
+    przeciwwskazania: [
+      'Choroby serca i ukladu krazenia',
+      'Nadcisnienie tetnicze',
+      'Przyjmowanie lekow SSRI/SNRI/MAOI',
+      'Historia zaburzen psychicznych',
+      'Ciaza i karmienie piersia',
+      'Problemy z watroba lub nerkami',
+    ],
+    znakiOstrzegawcze: [
+      'Bardzo wysoka temperatura ciala',
+      'Silny bol glowy',
+      'Zatrzymanie moczu',
+      'Dezorientacja lub splątanie',
+      'Drgawki',
+    ],
+    pierwszaPomoc: [
+      'Przenies osobe w chlodne, przewiewne miejsce',
+      'Podaj chlodna (nie zimna) wode',
+      'Chlodz cialo mokrymi recznikami',
+      'W przypadku przegrzania lub drgawek - natychmiast wezwij pogotowie',
+      'Nie zostawiaj osoby samej',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'MAOI', poziom: 'zagrożenie-życia', opis: 'Zespol serotoninowy, smiertelnie niebezpieczne!' },
+    { substancja: 'Tramadol', poziom: 'zagrożenie-życia', opis: 'Zespol serotoninowy i drgawki.' },
+    { substancja: 'SSRI/SNRI', poziom: 'niebezpieczna', opis: 'Oslabiaja efekty, ryzyko zespolu serotoninowego.' },
+    { substancja: 'Kokaina', slug: 'kokaina', kategoria: 'stymulanty', poziom: 'niebezpieczna', opis: 'Zwiekszone obciazenie serca, ryzyko przegrzania.' },
+    { substancja: 'Amfetamina', slug: 'amfetamina', kategoria: 'stymulanty', poziom: 'niebezpieczna', opis: 'Zwiekszone obciazenie serca i neurotoksycznosc.' },
+    { substancja: 'LSD', slug: 'lsd', kategoria: 'psychodeliki', poziom: 'ostrożność', opis: 'Candy flip - intensyfikacja efektow. Wymaga doswiadczenia.' },
+    { substancja: 'Kannabinoidy', slug: 'thc', kategoria: 'kannabinoidy', poziom: 'ostrożność', opis: 'Wzmacnia efekty, moze nasilic lek na schodzeniu.' },
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'ostrożność', opis: 'Odwadnia, oslabia euforię, zwieksza neurotoksycznosc.' },
+    { substancja: 'GHB', slug: 'ghb', kategoria: 'depresanty', poziom: 'niebezpieczna', opis: 'Nasilenie efektow depresyjnych, ryzyko utraty przytomnosci.' },
+  ],
+
+  opis: 'MDMA to syntetyczny empatogen wywolujacy silna euforie, empatię i bliskosc emocjonalna. Badany w terapii PTSD. Dzialanie trwa 3-5 godzin. Wymaga dlugich przerw miedzy uzyciem (min. 6 tygodni).',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['mda', '6-apb'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest MDMA?
+
+MDMA (3,4-metylenodioksymetamfetamina), znane jako ecstasy lub molly, to syntetyczny empatogen-entaktogen z grupy fenyloetyloamin. Zostalo zsyntetyzowane po raz pierwszy w 1912 roku przez firme Merck, ale jego wlasciwosci psychoaktywne odkryto dopiero w latach 70.
+
+MDMA dziala poprzez masowe uwalnianie serotoniny, dopaminy i noradrenaliny. Serotonina odpowiada za euforię i empatię, dopamina za przyjemnosc i motywację, a noradrenalina za pobudzenie fizyczne.
+
+<SubstanceStats substance={substance} />
+
+## Efekty
+
+MDMA wywoluje unikalne polaczenie empatii, euforii i energii, co czyni je popularna substancja na imprezach, ale tez obiecujacym narzedziem terapeutycznym.
+
+<EffectsTimeline phases={substance.osCzasu} />
+
+### Efekty pozytywne
+
+- **Euforia** - intensywne poczucie szczescia i dobrostanu
+- **Empatia** - gleboka bliskosc emocjonalna z innymi
+- **Towarzyskosc** - latwosc w nawiazywaniu kontaktow
+- **Intensyfikacja muzyki** - muzyka brzmi niezwykle dobrze
+- **Dotkliwosc** - przyjemnosc z dotyku
+
+### Efekty negatywne
+
+- **Szczekoscisk (bruksizm)** - mimowolne zaciskanie szczek
+- **Przegrzanie** - podwyzszona temperatura ciala
+- **Odwodnienie** lub przewodnienie
+- **Bezsennosc** - trudnosci z zasniemciem po
+- **Zjazd/Comedown** - obnizony nastroj nastepnego dnia
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Zasady bezpiecznego dawkowania">
+- **Zlota zasada**: 1-1.5 mg na kg masy ciala (osoba 70kg = max 105mg)
+- Nie "dokladaj" - jesli musisz, maks 1/2 poczatkowej dawki po 2h
+- Tabletki ecstasy moga zawierac 80-300mg MDMA - zawsze testuj i dziel!
+- Krysztal nie znaczy czystszy - tez moze byc zmieszany
+- Pierwszy raz? Zacznij od 75mg
+</HarmReductionBox>
+
+### Dlaczego przerwy sa wazne?
+
+MDMA wyczerpuje zasoby serotoniny w mozgu. Potrzeba minimum **6 tygodni** na ich odbudowe. Zbyt czeste uzywanie prowadzi do:
+- Utraty "magii" (zmniejszone efekty)
+- Nasilenia efektow ubocznych
+- Potencjalnej neurotoksycznosci
+- Problemow z nastrojem i pamięcia
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Testowanie substancji
+
+Zawsze testuj MDMA zestawami reagentowymi:
+- **Marquis**: MDMA = fioletowo-czarny
+- **Simon**: MDMA = niebieski (odroznia od MDA)
+- **Mecke**: MDMA = ciemnozielony do czarnego
+
+### Suplementacja
+
+Suplementy moga zmniejszyc neurotoksycznosc i zlagodzic zjazd:
+
+**Przed:**
+- Magnez (300mg) - redukuje szczekoscisk
+- ALA (kwas alfa-liponowy) - antyoksydant
+
+**W trakcie:**
+- Witamina C (1000mg)
+- Elektrolity
+
+**Po (nastepny dzien):**
+- 5-HTP (100mg) - prekursor serotoniny
+- EGCG (zielona herbata) - pomaga przy 5-HTP
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+### Niebezpieczne polaczenia
+
+**MDMA + MAOI** - smiertelnie niebezpieczne! Inhibitory MAO (takze w niektorych lekach i roslinach jak ayahuasca) blokuja rozklad serotoniny, co prowadzi do zespolu serotoninowego.
+
+**MDMA + inne stymulanty** - znacznie zwieksza obciazenie serca i ryzyko przegrzania.
+
+## Potencjal terapeutyczny
+
+MDMA jest intensywnie badane w terapii PTSD (zespolu stresu pourazowego). W badaniach klinicznych 67% pacjentow nie spelnialo juz kryteriow PTSD po 2-3 sesjach MDMA-wspomaganej psychoterapii. FDA przyznalo MDMA status "breakthrough therapy".
+
+## Aspekty prawne
+
+MDMA jest substancja kontrolowana w Polsce (Grupa I-P). Posiadanie, produkcja i dystrybucja sa nielegalne.
+
+## Zrodla
+
+- [Wikipedia - MDMA](https://pl.wikipedia.org/wiki/3,4-Metylenodioksymetamfetamina)
+- [Wylecz.to - MDMA](https://wylecz.to/leki-i-suplementy/mdma-ecstasy)
+- [Poradnik Zdrowie - Ecstasy](https://www.poradnikzdrowie.pl/psychologia/zdrowie-psychiczne/ecstasy-mdma-dzialanie-objawy-i-skutki-uboczne-zazycia-narkotyku-aa-ALMX-pBnG-rMT6.html)

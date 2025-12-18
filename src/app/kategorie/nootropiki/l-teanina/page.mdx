@@ -1,0 +1,141 @@
+export const substance = {
+  nazwa: 'L-teanina',
+  nazwyAlternatywne: ['Teanina', 'Theanine', 'Suntheanine'],
+  nazwaSystematyczna: 'Kwas N-etylo-L-glutaminowy',
+  wzorChemiczny: 'C7H14N2O3',
+  kategoria: 'nootropiki',
+  slug: 'l-teanina',
+
+  klasaPrawna: 'legalna',
+  grupaChemiczna: 'Aminokwasy',
+
+  efektyGlowne: [
+    'Relaksacja bez sedacji',
+    'Redukcja lęku',
+    'Poprawa koncentracji',
+    'Wspomaga fale alfa mózgu',
+    'Łagodzi efekty kofeiny',
+  ],
+  efektyUboczne: [
+    'Rzadkie - senność przy wysokich dawkach',
+    'Bóle głowy (rzadko)',
+  ],
+
+  czasDzialania: {
+    poczatek: '30-60 min',
+    szczyt: '1-2 h',
+    calkowity: '3-5 h',
+    popierwsze: 'efekty mogą się kumulować przy regularnym użyciu',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '25-50 mg',
+      lekka: '50-100 mg',
+      srednia: '100-200 mg',
+      silna: '200-400 mg',
+      bardzoSilna: '400+ mg',
+      jednostka: 'mg',
+      uwagi: 'Filiżanka zielonej herbaty zawiera 25-50mg. Stosunek z kofeiną 2:1 (np. 200mg L-teaniny + 100mg kofeiny).',
+    },
+  ],
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Bardzo bezpieczna substancja',
+      'Można łączyć z kofeiną dla lepszego skupienia',
+      'Można stosować codziennie',
+      'Brak znanych poważnych skutków ubocznych',
+    ],
+    setISetting: [
+      'Stosuj gdy potrzebujesz spokojnego skupienia',
+      'Dobra przed medytacją',
+    ],
+    przeciwwskazania: [
+      'Brak znanych poważnych przeciwwskazań',
+      'Ciąża - brak wystarczających badań',
+    ],
+    znakiOstrzegawcze: [
+      'Praktycznie brak',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Kofeina', slug: 'kofeina', kategoria: 'stymulanty', poziom: 'synergia', opis: 'Idealna kombinacja - kofeina dla energii, L-teanina łagodzi nerwowość.' },
+    { substancja: 'Leki na nadciśnienie', poziom: 'ostrożność', opis: 'L-teanina może obniżać ciśnienie.' },
+  ],
+
+  opis: 'L-teanina to aminokwas z zielonej herbaty. Promuje relaksację bez sedacji, redukuje lęk i poprawia koncentrację. Synergicznie działa z kofeiną. Bardzo bezpieczna.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['modafinil', 'piracetam'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest L-teanina?
+
+L-teanina to aminokwas występujący naturalnie w herbacie (szczególnie zielonej) i niektórych grzybach. Jest odpowiedzialna za "spokojną czujność" towarzyszącą piciu herbaty - w przeciwieństwie do nerwowego pobudzenia od samej kofeiny.
+
+L-teanina jest jednym z najbezpieczniejszych i najlepiej zbadanych nootropików.
+
+<SubstanceStats substance={substance} />
+
+## Mechanizm działania
+
+L-teanina:
+- Zwiększa poziom GABA (relaksacja)
+- Zwiększa dopaminę i serotoninę
+- Promuje fale alfa w mózgu (stan "spokojnej czujności")
+- Moduluje glutaminian
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Stack z kofeiną">
+L-teanina + kofeina to jeden z najpopularniejszych i najlepiej zbadanych stacków nootropikowych:
+
+**Zalecany stosunek: 2:1**
+- 200mg L-teaniny + 100mg kofeiny
+- 100mg L-teaniny + 50mg kofeiny
+
+Kofeina daje energię i skupienie, L-teanina usuwa nerwowość i drżenie.
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Bezpieczeństwo
+
+L-teanina jest uznawana za GRAS (Generally Recognized as Safe) przez FDA. Badania nie wykazały poważnych skutków ubocznych nawet przy dawkach kilkukrotnie wyższych niż typowe.
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Źródła naturalne
+
+| Źródło | Zawartość L-teaniny |
+|--------|---------------------|
+| Zielona herbata | 25-60 mg / filiżanka |
+| Czarna herbata | 25-50 mg / filiżanka |
+| Biała herbata | 30-60 mg / filiżanka |
+| Gyokuro | 60-100 mg / filiżanka |
+| Matcha | 40-60 mg / łyżeczka |
+
+## Zastosowania
+
+- **Przed pracą/nauką** - spokojne skupienie
+- **Przed medytacją** - ułatwia wejście w stan relaksacji
+- **Przed snem** - może poprawić jakość snu (bez sedacji)
+- **Przy lęku** - łagodne działanie anxiolityczne
+
+## Aspekty prawne
+
+L-teanina jest legalna na całym świecie jako suplement diety.

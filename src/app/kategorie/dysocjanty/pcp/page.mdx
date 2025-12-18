@@ -1,0 +1,124 @@
+export const substance = {
+  nazwa: 'PCP',
+  nazwyAlternatywne: ['Fencyklidyna', 'Angel dust', 'Aniol', 'Sherman'],
+  nazwaSystematyczna: '1-(1-fenylocykloheksylo)piperidyna',
+  wzorChemiczny: 'C17H25N',
+  kategoria: 'dysocjanty',
+  slug: 'pcp',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Arylocykloheksylaminy',
+
+  efektyGlowne: [
+    'Silna dysocjacja',
+    'Euforia',
+    'Poczucie niezniszczalnosci',
+    'Halucynacje',
+    'Znieczulenie',
+  ],
+  efektyUboczne: [
+    'Agresja',
+    'Psychoza',
+    'Dezorientacja',
+    'Nystagmus (drganie galek ocznych)',
+    'Amnezja',
+  ],
+
+  czasDzialania: {
+    poczatek: '2-5 min (wziewnie)',
+    szczyt: '15-60 min',
+    calkowity: '4-6 h',
+    popierwsze: 'do 24 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'wziewnie',
+      prog: '1-2 mg',
+      lekka: '2-4 mg',
+      srednia: '4-6 mg',
+      silna: '6-10 mg',
+      bardzoSilna: '10+ mg',
+      jednostka: 'mg',
+      uwagi: 'PCP jest bardzo silne. Przedawkowanie latwi.',
+    },
+  ],
+
+  harmReduction: {
+    zasadyOgolne: [
+      'PCP jest BARDZO niebezpieczne',
+      'Nigdy nie uzywaj sam',
+      'Zacznij od mikro-dawki',
+      'Nie mieszaj z niczym',
+    ],
+    setISetting: [
+      'Bezpieczne otoczenie bez niebezpiecznych przedmiotow',
+      'Trzezwy opiekun obowiazkowy',
+    ],
+    przeciwwskazania: [
+      'Historia psychoz',
+      'Problemy z agresja',
+      'Choroby serca',
+    ],
+    znakiOstrzegawcze: [
+      'Agresja',
+      'Psychoza',
+      'Drgawki',
+      'Hipertermia',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Nasilenie toksycznosci.' },
+    { substancja: 'Stymulanty', poziom: 'zagrożenie-życia', opis: 'Ryzyko zawalu i psychozy.' },
+    { substancja: 'Depresanty', poziom: 'niebezpieczna', opis: 'Depresja oddechowa.' },
+  ],
+
+  opis: 'PCP to silny dysocjant znany z wywoływania psychozy i agresji. Bardzo waski margines bezpieczeństwa. Jedna z najbardziej niebezpiecznych substancji rekreacyjnych.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['ketamina', 'dxm'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest PCP?
+
+PCP (fencyklidyna) to silny dysocjant z grupy arylocykloheksyloamin. Zostal opracowany jako anestetyk w latach 50., ale wycofany z uzytku medycznego ze wzgledu na efekty uboczne (halucynacje, psychoza).
+
+PCP jest jedna z najbardziej niebezpiecznych substancji rekreacyjnych ze wzgledu na:
+- Bardzo waski margines bezpieczenstwa
+- Wywoływanie psychozy i agresji
+- Poczucie "niezniszczalnosci" prowadzace do urazow
+
+<SubstanceStats substance={substance} />
+
+## Dlaczego PCP jest niebezpieczne?
+
+- **Psychoza** - czeste, nawet przy niskich dawkach
+- **Agresja** - poczucie niezniszczalnosci + paranoja = przemoc
+- **Znieczulenie** - brak odczuwania bolu = poważne urazy
+- **Przedawkowanie** - dawka rekreacyjna blisko toksycznej
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="WYSOKIE RYZYKO">
+PCP ma bardzo maly margines miedzy dawka rekreacyjna a toksyczna. Przedawkowanie jest latwi i moze byc smiertelne. Ta substancja jest wyjatkowo niebezpieczna nawet dla doswiadczonych uzytkownikow.
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Aspekty prawne
+
+PCP jest substancja kontrolowana w Polsce (Grupa I-P).

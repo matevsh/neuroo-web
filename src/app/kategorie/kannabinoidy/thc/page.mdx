@@ -1,0 +1,173 @@
+export const substance = {
+  nazwa: 'THC',
+  nazwyAlternatywne: ['Marihuana', 'Trawa', 'Zioło', 'Ganja', 'Cannabis'],
+  nazwaSystematyczna: 'Delta-9-tetrahydrokannabinol',
+  wzorChemiczny: 'C21H30O2',
+  kategoria: 'kannabinoidy',
+  slug: 'thc',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Kannabinoidy naturalne',
+
+  efektyGlowne: [
+    'Relaksacja',
+    'Euforia',
+    'Intensyfikacja zmysłów',
+    'Zwiększony apetyt',
+    'Zmiana percepcji czasu',
+    'Kreatywność',
+  ],
+  efektyUboczne: [
+    'Suchość w ustach',
+    'Zaczerwienienie oczu',
+    'Paranoja i lęk',
+    'Zaburzenia pamięci krótkotrwałej',
+    'Zwiększony puls',
+    'Problemy z koordynacją',
+  ],
+
+  czasDzialania: {
+    poczatek: '0-10 min (wziewnie), 30-90 min (doustnie)',
+    szczyt: '30-60 min (wziewnie), 2-3 h (doustnie)',
+    calkowity: '2-4 h (wziewnie), 4-8 h (doustnie)',
+    popierwsze: 'do 24 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'wziewnie',
+      prog: '1-2 mg',
+      lekka: '2-5 mg',
+      srednia: '5-15 mg',
+      silna: '15-30 mg',
+      bardzoSilna: '30+ mg',
+      jednostka: 'mg THC',
+      uwagi: 'Susz ma 10-25% THC. 0.1g suszu o 20% = 20mg THC.',
+    },
+    {
+      route: 'doustnie',
+      prog: '2-5 mg',
+      lekka: '5-10 mg',
+      srednia: '10-25 mg',
+      silna: '25-50 mg',
+      bardzoSilna: '50+ mg',
+      jednostka: 'mg THC',
+      uwagi: 'Edibles działają dłużej i silniej. CZEKAJ 2h przed redozowaniem!',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'tygodnie regularnego użycia',
+    polowa: '3-7 dni',
+    zero: '2-4 tygodnie',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Zacznij od niskiej dawki, szczególnie przy edibles',
+      'Nie prowadź pod wpływem',
+      'Unikaj mieszania z alkoholem',
+      'Młodzież powinna unikać (rozwój mózgu)',
+      'Waporyzacja > palenie (mniej szkodliwe)',
+    ],
+    setISetting: [
+      'Bezpieczne, znajome otoczenie',
+      'Z zaufanymi ludźmi',
+      'Miej przekąski i wodę',
+    ],
+    przeciwwskazania: [
+      'Historia psychoz lub schizofrenii',
+      'Wiek poniżej 25 lat (rozwój mózgu)',
+      'Ciąża i karmienie',
+      'Choroby serca',
+    ],
+    znakiOstrzegawcze: [
+      'Silna paranoja',
+      'Napady paniki',
+      'Wymioty (syndrom CHS)',
+      'Silne zawroty głowy',
+    ],
+    pierwszaPomoc: [
+      'Uspokój osobę - efekty są tymczasowe',
+      'Przenies w spokojne miejsce',
+      'Podaj wodę i coś słodkiego',
+      'Oddech głęboki',
+      'CBD może zmniejszyć lęk',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'ostrożność', opis: 'Nasila efekty, zwiększa nudności i dezorientację.' },
+    { substancja: 'Psychodeliki', poziom: 'ostrożność', opis: 'Znacznie nasila efekty psychodeliczne i lęk.' },
+    { substancja: 'Stymulanty', poziom: 'ostrożność', opis: 'Zwiększa obciążenie serca.' },
+    { substancja: 'Depresanty', poziom: 'ostrożność', opis: 'Nasilona sedacja.' },
+  ],
+
+  opis: 'THC to główny składnik psychoaktywny marihuany. Wywołuje relaksację, euforię i zmianę percepcji. Działa na układ endokannabinoidowy. Może wywołać lęk u podatnych osób.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['cbd', 'syntetyczne-kannabinoidy'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest THC?
+
+THC (delta-9-tetrahydrokannabinol) to główny składnik psychoaktywny konopi indyjskich (Cannabis sativa). Działa na układ endokannabinoidowy organizmu, wiążąc się z receptorami CB1 i CB2.
+
+Cannabis jest najczęściej używaną nielegalną substancją psychoaktywną na świecie. Występuje w formie suszu (marihuana), żywicy (haszysz), olejków i jadlaków (edibles).
+
+<SubstanceStats substance={substance} />
+
+## Metody spożycia
+
+| Metoda | Początek | Czas trwania | Uwagi |
+|--------|----------|--------------|-------|
+| Palenie | 0-10 min | 2-4 h | Szkodliwe dla płuc |
+| Waporyzacja | 0-10 min | 2-4 h | Mniej szkodliwa |
+| Edibles | 30-90 min | 4-8 h | Silniejsze, trudniejsze do dawkowania |
+| Tynktury | 15-45 min | 3-6 h | Pod język |
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Edibles - UWAGA!">
+Zjadliwe (edibles) działają znacznie dłużej i silniej niż palenie. Błąd nr 1 to redozowanie zanim zadziała pierwsza dawka.
+
+**Zasada dla edibles: Zacznij od 5-10mg, czekaj MINIMUM 2 godziny przed wzięciem więcej.**
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Green out
+
+"Green out" to nieprzyjemne doświadczenie po zbyt dużej dawce:
+- Silne zawroty głowy
+- Nudności/wymioty
+- Paranoja
+- Bladość
+- Zimne poty
+
+Co robić: położyć się, pić wodę, jeść coś słodkiego, pamiętać że efekty miną.
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Uzależnienie
+
+THC może uzależniać psychicznie. Około 9% użytkowników rozwija uzależnienie. Objawy odstawienia:
+- Drażliwość
+- Problemy ze snem
+- Zmniejszony apetyt
+- Lęk
+
+## Aspekty prawne
+
+Marihuana jest nielegalna w Polsce. Posiadanie grozi karą do 3 lat więzienia.

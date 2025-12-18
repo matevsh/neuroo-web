@@ -1,0 +1,165 @@
+export const substance = {
+  nazwa: 'Morfina',
+  nazwyAlternatywne: ['Morphine', 'MS Contin', 'Miss Emma'],
+  nazwaSystematyczna: '(5α,6α)-7,8-didehydro-4,5-epoksy-17-metylo-morfinan-3,6-diol',
+  wzorChemiczny: 'C17H19NO3',
+  kategoria: 'opioidy',
+  slug: 'morfina',
+
+  klasaPrawna: 'kontrolowana',
+  grupaChemiczna: 'Opiaty naturalne',
+
+  efektyGlowne: [
+    'Silna analgezja',
+    'Euforia',
+    'Uczucie ciepła',
+    'Relaksacja',
+    'Senność',
+  ],
+  efektyUboczne: [
+    'Depresja oddechowa',
+    'Nudności i wymioty',
+    'Zaparcia',
+    'Świąd',
+    'Zwężenie źrenic',
+    'Uzależnienie',
+  ],
+
+  czasDzialania: {
+    poczatek: '15-30 min (doustnie), 5-10 min (dożylnie)',
+    szczyt: '1-2 h (doustnie)',
+    calkowity: '4-6 h',
+    popierwsze: 'do 12 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '5-10 mg',
+      lekka: '10-20 mg',
+      srednia: '20-40 mg',
+      silna: '40-60 mg',
+      bardzoSilna: '60+ mg',
+      jednostka: 'mg',
+      uwagi: 'Dawki dla osób bez tolerancji. Tolerancja na opioidy rośnie BARDZO szybko.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'dni regularnego użycia',
+    polowa: '1-2 dni',
+    zero: '1-2 tygodnie',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'ZAWSZE miej przy sobie nalokson',
+      'Nigdy nie używaj sam',
+      'Zacznij od bardzo niskiej dawki',
+      'Nie mieszaj z alkoholem ani depresantami',
+      'Po przerwie - zaczynaj od niższej dawki!',
+    ],
+    setISetting: [
+      'Miej przy sobie nalokson',
+      'Ktoś trzeźwy w pobliżu',
+      'Dostęp do telefonu',
+    ],
+    przeciwwskazania: [
+      'Problemy oddechowe',
+      'Spożycie alkoholu',
+      'Używanie innych depresantów',
+      'Ciąża',
+    ],
+    znakiOstrzegawcze: [
+      'Wolny lub nieregularny oddech',
+      'Sinice (niebieskie usta)',
+      'Utrata przytomności',
+      'Charczenie',
+    ],
+    pierwszaPomoc: [
+      'Podaj nalokson NATYCHMIAST',
+      'Wezwij pogotowie',
+      'Pozycja boczna bezpieczna',
+      'Sztuczne oddychanie jeśli brak oddechu',
+      'Nalokson można powtórzyć co 2-3 minuty',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa - ŚMIERTELNE!' },
+    { substancja: 'Benzodiazepiny', slug: 'benzodiazepiny', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa - ŚMIERTELNE!' },
+    { substancja: 'GHB', slug: 'ghb', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa - ŚMIERTELNE!' },
+    { substancja: 'Inne opioidy', poziom: 'zagrożenie-życia', opis: 'Sumowanie efektów, przedawkowanie.' },
+    { substancja: 'Stymulanty', poziom: 'niebezpieczna', opis: 'Speedball - maskuje przedawkowanie opioidu.' },
+  ],
+
+  opis: 'Morfina to naturalny opioid z maku lekarskiego, wzorzec dla innych opioidów. Stosowana w medycynie przeciwbólowo. Silnie uzależnia. Przedawkowanie jest częstą przyczyną zgonów.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['fentanyl', 'kodeina'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest morfina?
+
+Morfina to naturalny opioid alkaloidowy pozyskiwany z maku lekarskiego (Papaver somniferum). Jest wzorcem dla wszystkich opioidów - ich siła jest często wyrażana w "ekwiwalentach morfiny".
+
+Morfina działa na receptory opioidowe μ, wywołując silną analgezję, euforię i sedację. Jest stosowana medycznie w leczeniu silnego bólu.
+
+<SubstanceStats substance={substance} />
+
+## PRZEDAWKOWANIE OPIOIDAMI
+
+<WarningBanner variant="danger">
+Przedawkowanie opioidami to NAGŁY PRZYPADEK ZAGROŻENIA ŻYCIA. Objawy:
+- Wolny lub brak oddechu
+- Sinica (sine usta i paznokcie)
+- Utrata przytomności
+- "Charczenie"
+
+**DZIAŁAJ NATYCHMIAST: Podaj nalokson, wezwij pogotowie, sztuczne oddychanie.**
+</WarningBanner>
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="TOLERANCJA JEST NIEBEZPIECZNA">
+Tolerancja na opioidy:
+- Rośnie BARDZO szybko
+- ZNIKA po przerwie!
+- Po tygodniu abstynencji dawka która wcześniej była bezpieczna MOŻE BYĆ ŚMIERTELNA
+
+**Zasada: Po każdej przerwie - zaczynaj od dawki jak za pierwszym razem.**
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Nalokson ratuje życie
+
+Nalokson (Narcan, Nyxoid) odwraca przedawkowanie opioidów. Jest dostępny w Polsce bez recepty. KAŻDY użytkownik opioidów powinien go mieć.
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Uzależnienie
+
+Morfina silnie uzależnia fizycznie i psychicznie. Odstawienie powoduje:
+- Silne bóle mięśniowe
+- Biegunka
+- Bezsenność
+- Lęk
+- "Gęsia skórka"
+
+Odstawienie jest bardzo nieprzyjemne ale zwykle nie zagraża życiu (w przeciwieństwie do alkoholu/benzodiazepin).
+
+## Aspekty prawne
+
+Morfina jest substancją kontrolowaną, dostępną tylko na receptę.

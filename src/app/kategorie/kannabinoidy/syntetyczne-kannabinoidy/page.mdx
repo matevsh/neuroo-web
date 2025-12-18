@@ -1,0 +1,144 @@
+export const substance = {
+  nazwa: 'Syntetyczne kannabinoidy',
+  nazwyAlternatywne: ['Spice', 'K2', 'Dopalacze', 'Mocarz', 'JWH'],
+  nazwaSystematyczna: 'Różne (JWH-018, AM-2201, etc.)',
+  wzorChemiczny: 'Różne',
+  kategoria: 'kannabinoidy',
+  slug: 'syntetyczne-kannabinoidy',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Syntetyczne kannabinoidy',
+
+  efektyGlowne: [
+    'Efekty podobne do THC ale silniejsze',
+    'Euforia',
+    'Relaksacja',
+    'Zmiana percepcji',
+  ],
+  efektyUboczne: [
+    'Silna paranoja',
+    'Tachykardia',
+    'Drgawki',
+    'Psychoza',
+    'Wymioty',
+    'Utrata przytomności',
+    'ZGON',
+  ],
+
+  czasDzialania: {
+    poczatek: '1-5 min (wziewnie)',
+    szczyt: '10-30 min',
+    calkowity: '1-3 h',
+    popierwsze: 'bardzo zmienne',
+  },
+
+  dawkowanie: [
+    {
+      route: 'wziewnie',
+      prog: 'Nieznane',
+      lekka: 'Nieznane',
+      srednia: 'Nieznane',
+      silna: 'Nieznane',
+      bardzoSilna: 'Nieznane',
+      jednostka: 'mg',
+      uwagi: 'NIEMOŻLIWE do bezpiecznego dawkowania! Nierównomierna dystrybucja na materiale roślinnym.',
+    },
+  ],
+
+  harmReduction: {
+    zasadyOgolne: [
+      'UNIKAJ - jedne z najbardziej niebezpiecznych substancji',
+      'Jeśli już - miej przy sobie kogoś trzeźwego',
+      'Nigdy nie używaj sam',
+      'Miej dostęp do telefonu/pogotowia',
+    ],
+    setISetting: [
+      'Blisko szpitala',
+      'Z kimś kto może wezwać pomoc',
+    ],
+    przeciwwskazania: [
+      'Wszystkie - to niebezpieczna substancja dla każdego',
+    ],
+    znakiOstrzegawcze: [
+      'Drgawki',
+      'Utrata przytomności',
+      'Trudności z oddechem',
+      'Silny ból w klatce',
+      'Psychoza',
+    ],
+    pierwszaPomoc: [
+      'Wezwij pogotowie NATYCHMIAST',
+      'Pozycja boczna bezpieczna',
+      'Nie zostawiaj osoby samej',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Wszystkie', poziom: 'niebezpieczna', opis: 'Ze względu na nieprzewidywalność - wszystkie kombinacje są niebezpieczne.' },
+  ],
+
+  opis: 'Syntetyczne kannabinoidy to sztuczne związki naśladujące THC, ale 10-100x silniejsze i znacznie bardziej niebezpieczne. Odpowiedzialne za liczne zgony. ZDECYDOWANIE ODRADZAMY.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['thc'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## OSTRZEŻENIE
+
+<WarningBanner variant="danger">
+Syntetyczne kannabinoidy są jednymi z najbardziej niebezpiecznych substancji psychoaktywnych. Są odpowiedzialne za liczne zgony i trwałe uszkodzenia zdrowia. ZDECYDOWANIE ODRADZAMY ich używanie.
+</WarningBanner>
+
+## Czym są syntetyczne kannabinoidy?
+
+Syntetyczne kannabinoidy to sztuczne związki chemiczne zaprojektowane do działania na receptory kannabinoidowe podobnie jak THC, ale są 10-100x silniejsze i znacznie bardziej niebezpieczne.
+
+Sprzedawane były jako "dopalacze", "Spice", "K2" - nanoszone na materiał roślinny i palona jak marihuana.
+
+<SubstanceStats substance={substance} />
+
+## Dlaczego są tak niebezpieczne?
+
+1. **Nierównomierna dystrybucja** - substancja jest nanoszona nierównomiernie, jeden zaciąg może mieć 100x więcej niż inny
+2. **Nieznany skład** - ciągle zmieniające się związki, niemożliwe do zidentyfikowania
+3. **Ekstremalna siła** - nawet mikrogramy mogą być niebezpieczne
+4. **Pełni agoniści** - w przeciwieństwie do THC (częściowy agonista), syntetyki są pełnymi agonistami CB1
+
+## "Dawkowanie"
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="NIEMOŻLIWE DO BEZPIECZNEGO DAWKOWANIA">
+Syntetycznych kannabinoidów NIE DA SIĘ bezpiecznie dawkować:
+- Nie wiesz co jest w produkcie
+- Substancja jest nierównomiernie rozprowadzona
+- Jeden "bezpieczny" zaciąg może być 100x silniejszy od poprzedniego
+- Dawka aktywna i śmiertelna mogą się nakładać
+</HarmReductionBox>
+
+## Skutki zdrowotne
+
+Udokumentowane skutki używania syntetycznych kannabinoidów:
+- Zawały serca (nawet u młodych osób)
+- Udary
+- Ostra niewydolność nerek
+- Psychoza (trwająca nawet po odstawieniu)
+- Drgawki
+- Śmierć
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Aspekty prawne
+
+Syntetyczne kannabinoidy są nielegalne w Polsce na mocy ustawy o przeciwdziałaniu narkomanii i ustawy o Nowych Substancjach Psychoaktywnych.

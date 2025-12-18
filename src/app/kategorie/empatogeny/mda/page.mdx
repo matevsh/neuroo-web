@@ -1,0 +1,120 @@
+export const substance = {
+  nazwa: 'MDA',
+  nazwyAlternatywne: ['Sass', 'Sally', 'Tenamfetamina'],
+  nazwaSystematyczna: '3,4-metylenodioksyamfetamina',
+  wzorChemiczny: 'C10H13NO2',
+  kategoria: 'empatogeny',
+  slug: 'mda',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Fenyloetyloaminy',
+
+  efektyGlowne: [
+    'Empatia',
+    'Euforia',
+    'Halucynacje wizualne',
+    'Stymulacja',
+    'Intensyfikacja zmyslow',
+  ],
+  efektyUboczne: [
+    'Szczekoscisk',
+    'Przegrzanie',
+    'Bezsennosc',
+    'Nudnosci',
+    'Neurotoksycznosc',
+  ],
+
+  czasDzialania: {
+    poczatek: '30-60 min',
+    szczyt: '2-3 h',
+    calkowity: '5-8 h',
+    popierwsze: 'do 24 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '20 mg',
+      lekka: '40-60 mg',
+      srednia: '60-100 mg',
+      silna: '100-145 mg',
+      bardzoSilna: '145+ mg',
+      jednostka: 'mg',
+    },
+  ],
+
+  harmReduction: {
+    zasadyOgolne: [
+      'MDA jest bardziej neurotoksyczne niz MDMA',
+      'Zachowaj dlugie przerwy (min 8 tygodni)',
+      'Dawkuj ostroznie - silniejsze efekty halucynogenne',
+      'Testuj substancje',
+    ],
+    setISetting: [
+      'Bezpieczne otoczenie',
+      'Trip-sitter zalecany',
+    ],
+    przeciwwskazania: [
+      'Choroby serca',
+      'Historia psychoz',
+      'Przyjmowanie SSRI/MAOI',
+    ],
+    znakiOstrzegawcze: [
+      'Wysoka temperatura',
+      'Dezorientacja',
+      'Bol w klatce piersiowej',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'MAOI', poziom: 'zagrożenie-życia', opis: 'Zespol serotoninowy.' },
+    { substancja: 'SSRI', poziom: 'niebezpieczna', opis: 'Oslabia efekty, ryzyko zespolu serotoninowego.' },
+    { substancja: 'MDMA', slug: 'mdma', kategoria: 'empatogeny', poziom: 'ostrożność', opis: 'Zwiekszona neurotoksycznosc.' },
+  ],
+
+  opis: 'MDA to prekursor MDMA o silniejszych efektach halucynogennych i dluzszym dzialaniu. Bardziej neurotoksyczne niz MDMA. Dzialanie 5-8 godzin.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['mdma', '6-apb'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest MDA?
+
+MDA (3,4-metylenodioksyamfetamina) to empatogen-entaktogen blisko spokrewniony z MDMA. Jest metabolitem MDMA i jego prekursorem chemicznym. W porownaniu do MDMA, MDA ma silniejsze wlasciwosci halucynogenne i dluszy czas dzialania, ale jest tez bardziej neurotoksyczne.
+
+<SubstanceStats substance={substance} />
+
+## Roznice MDA vs MDMA
+
+| Cecha | MDA | MDMA |
+|-------|-----|------|
+| Czas dzialania | 5-8 h | 3-5 h |
+| Halucynacje | Silniejsze | Slabsze |
+| Stymulacja | Wieksza | Mniejsza |
+| Empatia | Podobna | Podobna |
+| Neurotoksycznosc | Wyzsza | Nizsza |
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="MDA jest silniejsze">
+MDA jest bardziej potent niz MDMA. Dawka 100mg MDA odpowiada mniej wiecej 150mg MDMA pod wzgledem intensywnosci.
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Aspekty prawne
+
+MDA jest substancja kontrolowana w Polsce (Grupa I-P).

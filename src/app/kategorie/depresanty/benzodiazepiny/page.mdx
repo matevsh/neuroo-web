@@ -1,0 +1,159 @@
+export const substance = {
+  nazwa: 'Benzodiazepiny',
+  nazwyAlternatywne: ['Benzo', 'Xanax', 'Diazepam', 'Klonazepam', 'Lorazepam'],
+  nazwaSystematyczna: 'Pochodne 1,4-benzodiazepiny',
+  wzorChemiczny: 'Różne',
+  kategoria: 'depresanty',
+  slug: 'benzodiazepiny',
+
+  klasaPrawna: 'kontrolowana',
+  grupaChemiczna: 'Benzodiazepiny',
+
+  efektyGlowne: [
+    'Redukcja leku',
+    'Relaksacja',
+    'Sedacja',
+    'Rozluźnienie mięśni',
+    'Działanie przeciwdrgawkowe',
+  ],
+  efektyUboczne: [
+    'Senność',
+    'Zaburzenia koordynacji',
+    'Amnezja',
+    'Dezorientacja',
+    'Paradoksalne pobudzenie',
+    'Silne uzależnienie',
+  ],
+
+  czasDzialania: {
+    poczatek: '15-60 min',
+    szczyt: '1-4 h',
+    calkowity: '6-24 h (zależnie od typu)',
+    popierwsze: 'do 72 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: 'Zależy od typu',
+      lekka: 'Zależy od typu',
+      srednia: 'Zależy od typu',
+      silna: 'Zależy od typu',
+      bardzoSilna: 'Zależy od typu',
+      jednostka: 'mg',
+      uwagi: 'Dawkowanie zależne od konkretnej substancji. Alprazolam: 0.25-2mg, Diazepam: 5-20mg.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: '1-2 tygodnie',
+    polowa: 'dni',
+    zero: '2-8 tygodni',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'NIGDY nie mieszaj z alkoholem lub opioidami',
+      'Nie używaj dłużej niż 2-4 tygodnie',
+      'Nie zwiększaj dawki samodzielnie',
+      'Nie odstawiaj nagle - ryzyko drgawek',
+      'Miej trip-sittera',
+    ],
+    setISetting: [
+      'Bezpieczne otoczenie',
+      'Nie prowadź',
+      'Nie podejmuj ważnych decyzji',
+    ],
+    przeciwwskazania: [
+      'Uzależnienie od substancji',
+      'Ciąża',
+      'Myasthenia gravis',
+      'Ciężka niewydolność oddechowa',
+    ],
+    znakiOstrzegawcze: [
+      'Trudności z oddychaniem',
+      'Silna senność',
+      'Sinica',
+      'Utrata przytomności',
+    ],
+    pierwszaPomoc: [
+      'Przy przedawkowaniu - flumazenil (tylko medycznie)',
+      'Pozycja boczna',
+      'Wezwij pogotowie',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa, śmierć!' },
+    { substancja: 'Opioidy', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa, najczęstsza przyczyna zgonów z przedawkowania!' },
+    { substancja: 'GHB', slug: 'ghb', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa.' },
+    { substancja: 'Inne depresanty', poziom: 'niebezpieczna', opis: 'Sumowanie efektów sedacyjnych.' },
+    { substancja: 'Psychodeliki', poziom: 'bezpieczna', opis: 'Mogą posłużyć do przerwania tripu.' },
+  ],
+
+  opis: 'Benzodiazepiny to leki przeciwlękowe i nasenne działające na receptory GABA. Silnie uzależniają fizycznie. Odstawienie może być śmiertelne. Mieszanie z alkoholem/opioidami jest jedną z głównych przyczyn zgonów.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['alkohol', 'ghb'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym są benzodiazepiny?
+
+Benzodiazepiny to klasa leków psychotropowych działających na receptory GABA-A. Są przepisywane jako leki przeciwlękowe, nasenne, przeciwdrgawkowe i rozluźniające mięśnie.
+
+Popularne benzodiazepiny:
+- **Alprazolam (Xanax)** - krótko działający
+- **Diazepam (Relanium)** - średnio długi
+- **Klonazepam** - długo działający
+- **Lorazepam** - średnio długi
+
+<SubstanceStats substance={substance} />
+
+## Równoważność dawek
+
+| Substancja | Dawka równoważna 10mg diazepamu |
+|------------|----------------------------------|
+| Alprazolam | 0.5 mg |
+| Klonazepam | 0.5 mg |
+| Lorazepam | 1 mg |
+| Diazepam | 10 mg |
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="SILNE UZALEŻNIENIE">
+Benzodiazepiny silnie uzależniają fizycznie już po 2-4 tygodniach regularnego użycia. Odstawienie po długim użyciu MUSI być stopniowe pod opieką lekarza - nagłe odstawienie może wywołać drgawki i śmierć.
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+### Benzodiazepiny + opioidy = śmierć
+
+To połączenie jest jedną z głównych przyczyn zgonów z przedawkowania. Oba typy substancji depresują oddychanie. Razem efekt jest synergistyczny i często śmiertelny.
+
+## Odstawienie
+
+Nagłe odstawienie benzodiazepin jest niebezpieczne i może wywołać:
+- Drgawki (mogą być śmiertelne)
+- Psychozę
+- Silny lęk
+- Bezsenność
+- Drżenie
+
+Zawsze odstawiaj stopniowo pod opieką lekarza!
+
+## Aspekty prawne
+
+Benzodiazepiny są lekami na receptę w Polsce. Posiadanie bez recepty jest nielegalne.

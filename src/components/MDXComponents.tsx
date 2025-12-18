@@ -6,6 +6,16 @@ import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { StatList, StatListItem } from '@/components/StatList'
 import { TagList, TagListItem } from '@/components/TagList'
 
+// Komponenty substancji
+import {
+  DosageTable,
+  EffectsTimeline,
+  HarmReductionBox,
+  InteractionsMatrix,
+  SubstanceStats,
+  WarningBanner,
+} from '@/components/substances'
+
 export const MDXComponents = {
   Blockquote({
     className,
@@ -95,4 +105,12 @@ export const MDXComponents = {
       />
     )
   },
+
+  // Komponenty substancji - dostępne w plikach MDX
+  DosageTable,
+  EffectsTimeline,
+  HarmReductionBox,
+  InteractionsMatrix,
+  SubstanceStats,
+  WarningBanner,
 }

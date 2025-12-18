@@ -1,0 +1,157 @@
+export const substance = {
+  nazwa: 'Fentanyl',
+  nazwyAlternatywne: ['China White', 'Apache', 'Dance Fever'],
+  nazwaSystematyczna: 'N-(1-fenetylo-4-piperydy)-N-fenylopropanoamid',
+  wzorChemiczny: 'C22H28N2O',
+  kategoria: 'opioidy',
+  slug: 'fentanyl',
+
+  klasaPrawna: 'kontrolowana',
+  grupaChemiczna: 'Syntetyczne opioidy',
+
+  efektyGlowne: [
+    'Ekstremalna analgezja',
+    'Euforia',
+    'Sedacja',
+    'Relaksacja',
+  ],
+  efektyUboczne: [
+    'Depresja oddechowa',
+    'Nudności',
+    'Zaparcia',
+    'Świąd',
+    'ŚMIERĆ przy minimalnym przedawkowaniu',
+  ],
+
+  czasDzialania: {
+    poczatek: 'sekundy (dożylnie)',
+    szczyt: '5-15 min',
+    calkowity: '1-2 h',
+    popierwsze: 'do 4 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: 'MIKROGRAMY',
+      lekka: 'MIKROGRAMY',
+      srednia: 'MIKROGRAMY',
+      silna: 'MIKROGRAMY',
+      bardzoSilna: 'MIKROGRAMY',
+      jednostka: 'ug',
+      uwagi: 'NIEMOŻLIWE do bezpiecznego dawkowania bez sprzętu medycznego. 50-100x silniejszy od morfiny.',
+    },
+  ],
+
+  harmReduction: {
+    zasadyOgolne: [
+      'UNIKAJ - to jeden z najniebezpieczniejszych narkotyków',
+      'Testuj KAŻDĄ substancję na fentanyl',
+      'ZAWSZE miej nalokson',
+      'Nigdy nie używaj sam',
+      'Jedna dawka może być śmiertelna',
+    ],
+    setISetting: [
+      'Nalokson pod ręką',
+      'Trzeźwy opiekun',
+      'Telefon do pogotowia',
+    ],
+    przeciwwskazania: [
+      'Wszystkie - to ekstremalne niebezpieczna substancja',
+    ],
+    znakiOstrzegawcze: [
+      'Wolny oddech',
+      'Sinica',
+      'Utrata przytomności',
+      'Zwiotczenie mięśni',
+    ],
+    pierwszaPomoc: [
+      'Podaj nalokson NATYCHMIAST - może być potrzebnych kilka dawek!',
+      'Wezwij pogotowie',
+      'Sztuczne oddychanie',
+      'Nie zostawiaj osoby samej - fentanyl działa dłużej niż nalokson',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Jakiekolwiek inne substancje', poziom: 'zagrożenie-życia', opis: 'Fentanyl jest tak silny, że KAŻDA kombinacja jest niebezpieczna.' },
+  ],
+
+  opis: 'Fentanyl to syntetyczny opioid 50-100x silniejszy od morfiny. Dawka śmiertelna to kilka ziaren soli. Główna przyczyna zgonów z przedawkowania opioidów. Zanieczyszcza inne narkotyki.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['morfina', 'kodeina'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## SKRAJNE OSTRZEŻENIE
+
+<WarningBanner variant="danger">
+Fentanyl to jeden z najniebezpieczniejszych narkotyków na świecie. Dawka śmiertelna (2mg) to wielkość kilku ziarenek soli. Jest główną przyczyną zgonów z przedawkowania opioidów.
+
+**FENTANYL ZANIECZYSZCZA INNE NARKOTYKI - kokainę, heroinę, tabletki. ZAWSZE TESTUJ!**
+</WarningBanner>
+
+## Czym jest fentanyl?
+
+Fentanyl to syntetyczny opioid opracowany do stosowania w anestezji i leczeniu silnego bólu. Jest 50-100x silniejszy od morfiny i 25-50x silniejszy od heroiny.
+
+Ze względu na niski koszt produkcji, fentanyl i jego analogi są dodawane do innych narkotyków jako zanieczyszczenie, co prowadzi do masowych zgonów.
+
+<SubstanceStats substance={substance} />
+
+## Porównanie siły
+
+| Substancja | Dawka równoważna |
+|------------|------------------|
+| Morfina | 30 mg |
+| Heroina | 15 mg |
+| Oksykodon | 20 mg |
+| **Fentanyl** | **0.3 mg (300 μg)** |
+| Karfentanyl | 0.03 mg (30 μg) |
+
+## "Dawkowanie"
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="NIEMOŻLIWE DO BEZPIECZNEGO DAWKOWANIA">
+Fentanyl jest tak silny, że:
+- Różnica między dawką aktywną a śmiertelną to mikrogramy
+- Niemożliwe do odmierzenia bez sprzętu laboratoryjnego
+- Nierównomiernie rozprowadzony w zanieczyszczonych narkotykach
+- **Hot spots** - jedno miejsce może mieć 100x więcej niż inne
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Testowanie na fentanyl
+
+Paski testowe na fentanyl są dostępne i mogą uratować życie:
+1. Rozpuść próbkę w wodzie
+2. Zanurz pasek na 15 sekund
+3. Poczekaj 2-5 minut
+4. Dwie kreski = negatywny, jedna = pozytywny
+
+UWAGA: Test może nie wykryć wszystkich analogów fentanylu!
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Nalokson i fentanyl
+
+Przedawkowanie fentanylu może wymagać WIELOKROTNYCH dawek naloksonu:
+- Standardowa dawka: 0.4-2 mg
+- Przy fentanylu może być potrzebne 4-10+ dawek
+- Nalokson działa krócej niż fentanyl - osoba może wrócić do przedawkowania!
+- ZAWSZE wezwij pogotowie
+
+## Aspekty prawne
+
+Fentanyl jest substancją kontrolowaną, dostępną tylko na receptę w formie plastrów i tabletek podjęzykowych dla pacjentów z silnym bólem.

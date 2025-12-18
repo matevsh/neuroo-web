@@ -1,0 +1,143 @@
+export const substance = {
+  nazwa: 'Kokaina',
+  nazwyAlternatywne: ['Koka', 'Snieg', 'Biala', 'Charlie', 'Blow'],
+  nazwaSystematyczna: 'Benzylometylekgonina',
+  wzorChemiczny: 'C17H21NO4',
+  kategoria: 'stymulanty',
+  slug: 'kokaina',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Tropany',
+
+  efektyGlowne: [
+    'Euforia',
+    'Zwiekszona energia',
+    'Pewnosc siebie',
+    'Gadatliwosc',
+    'Zmniejszone zmeczenie',
+  ],
+  efektyUboczne: [
+    'Przyspieszony puls',
+    'Podwyzszone cisnienie',
+    'Rozszerzenie zrenic',
+    'Paranoja',
+    'Uszkodzenie nosa (przy ciaganiu)',
+    'Silny craving',
+  ],
+
+  czasDzialania: {
+    poczatek: '1-3 min (donosowo)',
+    szczyt: '15-30 min',
+    calkowity: '30-60 min',
+    popierwsze: 'do 4 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'donosowo',
+      prog: '10-20 mg',
+      lekka: '20-50 mg',
+      srednia: '50-100 mg',
+      silna: '100-150 mg',
+      bardzoSilna: '150+ mg',
+      jednostka: 'mg',
+      uwagi: 'Uliczna kokaina ma 20-60% czystosci. "Kreska" to ok. 50-100mg.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'godziny',
+    polowa: '1-3 dni',
+    zero: '1-2 tygodnie',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Testuj substancje (szczegolnie na fentanyl!)',
+      'Nie mieszaj z alkoholem (kokaetylen)',
+      'Rób przerwy miedzy kreskami',
+      'Ogranicz czas uzywania (nie ciagi)',
+      'Miej nalokson jesli kokaina moze byc zanieczyszczona',
+    ],
+    setISetting: [
+      'Nie uzywaj sam',
+      'Miej dostep do wody',
+      'Ogranicz do kilku godzin',
+    ],
+    przeciwwskazania: [
+      'Choroby serca',
+      'Nadcisnienie',
+      'Historia zawalow lub udarow',
+      'Padaczka',
+    ],
+    znakiOstrzegawcze: [
+      'Bol w klatce piersiowej',
+      'Dusznosc',
+      'Silny bol glowy',
+      'Drgawki',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'niebezpieczna', opis: 'Tworzy kokaetylen - toksyczny dla serca.' },
+    { substancja: 'Opioidy', poziom: 'zagrożenie-życia', opis: 'Speedball - bardzo wysokie ryzyko przedawkowania.' },
+    { substancja: 'MDMA', slug: 'mdma', kategoria: 'empatogeny', poziom: 'niebezpieczna', opis: 'Duże obciazenie serca.' },
+    { substancja: 'MAOI', poziom: 'zagrożenie-życia', opis: 'Kryzys nadcisnieniowy.' },
+  ],
+
+  opis: 'Kokaina to silny stymulant wywołujacy krotka (30-60 min) ale intensywna euforię. Silnie uzaleznia. Mieszana z alkoholem tworzy toksyczny kokaetylen. Wysokie ryzyko dla serca.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['amfetamina', 'metamfetamina'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest kokaina?
+
+Kokaina to naturalny alkaloid tropanowy pozyskiwany z lisci krzewu koki (Erythroxylum coca). Jest jednym z najsilniejszych znanych stymulantow i ma bardzo wysoki potencjal uzalezniajacy.
+
+Dziala poprzez blokowanie wychwytu zwrotnego dopaminy, serotoniny i noradrenaliny, prowadzac do intensywnej ale krotkiej euforii.
+
+<SubstanceStats substance={substance} />
+
+## Formy kokainy
+
+- **Chlorowodorek kokainy** - bialy proszek, ciagniety lub rozpuszczany
+- **Crack** - wolna zasada, palona (szybsze wchodzenie, silniejsze uzaleznienie)
+- **Pasta kokainowa** - surowy produkt, palony (Ameryka Poludniowa)
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Kokaina i fentanyl">
+Coraz wieksza czesc ulicznej kokainy jest zanieczyszczona fentanylem. Nawet mala ilosc moze byc smiertelna. **ZAWSZE** testuj substancje i miej przy sobie nalokson!
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Kokaina + alkohol = kokaetylen
+
+Gdy pijesz alkohol i uzywasz kokainy, watroba tworzy kokaetylen - substancje 18x bardziej toksyczna dla serca niz sama kokaina. To polaczenie znacznie zwieksza ryzyko zawalu.
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Uzaleznienie
+
+Kokaina ma jeden z najwyzszych potencjalow uzalezniajacych. Charakterystyczne jest:
+- Silny craving (glod narkotykowy)
+- Szybka tolerancja
+- Chec powtarzania dawek
+- Depresja przy odstawieniu
+
+## Aspekty prawne
+
+Kokaina jest substancja kontrolowana w Polsce (Grupa I-P).

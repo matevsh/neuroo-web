@@ -1,0 +1,146 @@
+export const substance = {
+  nazwa: 'Kofeina',
+  nazwyAlternatywne: ['Kawa', 'Teina', 'Guarana', 'Caffeine'],
+  nazwaSystematyczna: '1,3,7-trimetyloksantyna',
+  wzorChemiczny: 'C8H10N4O2',
+  kategoria: 'stymulanty',
+  slug: 'kofeina',
+
+  klasaPrawna: 'legalna',
+  grupaChemiczna: 'Ksantyny',
+
+  efektyGlowne: [
+    'Pobudzenie',
+    'Zwiekszona koncentracja',
+    'Zmniejszone zmeczenie',
+    'Podwyzszona uwaga',
+    'Lekka euforia',
+  ],
+  efektyUboczne: [
+    'Bezsennosc',
+    'Lek i nerwowość',
+    'Przyspieszony puls',
+    'Problemy zoladkowe',
+    'Glod przy odstawieniu',
+    'Uzaleznienie',
+  ],
+
+  czasDzialania: {
+    poczatek: '15-45 min',
+    szczyt: '30-60 min',
+    calkowity: '3-5 h',
+    popierwsze: 'do 12 h (okres poltrwania)',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '10-20 mg',
+      lekka: '20-100 mg',
+      srednia: '100-200 mg',
+      silna: '200-400 mg',
+      bardzoSilna: '400+ mg',
+      jednostka: 'mg',
+      uwagi: 'Kawa = 80-120mg, herbata = 30-50mg, Red Bull = 80mg.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'dni-tygodnie',
+    polowa: '1-2 dni',
+    zero: '1-2 tygodnie',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Nie przekraczaj 400mg/dzien',
+      'Unikaj poznym popoludniem/wieczorem',
+      'Pij wode (kofeina odwadnia)',
+      'Rób przerwy by zresetowac tolerancje',
+    ],
+    setISetting: [
+      'Uzywaj do pracy/nauki',
+      'Nie zastepuj snu kofeina',
+    ],
+    przeciwwskazania: [
+      'Zaburzenia lekowe',
+      'Problemy z sercem',
+      'Ciaza (ogranicz do 200mg)',
+      'Nadcisnienie',
+    ],
+    znakiOstrzegawcze: [
+      'Bardzo szybkie bicie serca',
+      'Silny lek',
+      'Drganie',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Inne stymulanty', poziom: 'ostrożność', opis: 'Nasilenie efektow stymulujacych.' },
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'ostrożność', opis: 'Maskuje zmeczenie alkoholem.' },
+  ],
+
+  opis: 'Kofeina to najpopularniejszy stymulant na swiecie, naturalnie wystepujacy w kawie, herbacie i guaranie. Zwieksza uwage i koncentracje. Uzaleznia lagodnie.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['amfetamina'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest kofeina?
+
+Kofeina to naturalny stymulant z grupy ksantyn, wystepujacy w kawie, herbacie, guaranie i wielu innych roslinach. Jest najpopularniejsza substancja psychoaktywna na swiecie - spozywa ja okolo 90% populacji.
+
+Dziala poprzez blokowanie receptorow adenozynowych, co zapobiega uczuciu zmeczenia i zwieksza poziom dopaminy.
+
+<SubstanceStats substance={substance} />
+
+## Zawartość kofeiny w napojach
+
+| Napoj | Kofeina |
+|-------|---------|
+| Espresso (30ml) | 63 mg |
+| Kawa filtrowana (240ml) | 80-120 mg |
+| Herbata czarna (240ml) | 40-70 mg |
+| Herbata zielona (240ml) | 25-50 mg |
+| Red Bull (250ml) | 80 mg |
+| Cola (330ml) | 30-45 mg |
+| Tabletka kofeiny | 100-200 mg |
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Bezpieczne limity">
+- **Dorośli**: do 400mg/dzień
+- **Ciężarne**: do 200mg/dzień
+- **Dzieci**: unikać
+
+Smiertelna dawka to ok. 10g (100+ kaw naraz) - praktycznie niemożliwe do osiągnięcia przez napoje.
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Uzależnienie i odstawienie
+
+Kofeina uzależnia łagodnie. Objawy odstawienia:
+- Ból głowy (najczęstszy)
+- Zmęczenie
+- Rozdrażnienie
+- Problemy z koncentracją
+
+Trwają 2-9 dni. Można uniknąć stopniowym zmniejszaniem dawek.
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Aspekty prawne
+
+Kofeina jest legalna na całym świecie bez żadnych ograniczeń.

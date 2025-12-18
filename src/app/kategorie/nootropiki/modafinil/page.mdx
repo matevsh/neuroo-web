@@ -1,0 +1,144 @@
+export const substance = {
+  nazwa: 'Modafinil',
+  nazwyAlternatywne: ['Provigil', 'Modalert', 'Moda'],
+  nazwaSystematyczna: '2-[(difenyloMetylo)sulfinylo]acetamid',
+  wzorChemiczny: 'C15H15NO2S',
+  kategoria: 'nootropiki',
+  slug: 'modafinil',
+
+  klasaPrawna: 'kontrolowana',
+  grupaChemiczna: 'Sulfinyloamidy',
+
+  efektyGlowne: [
+    'Zwiększona czujność',
+    'Redukcja zmęczenia',
+    'Poprawa koncentracji',
+    'Zwiększona motywacja',
+    'Jasność umysłu',
+  ],
+  efektyUboczne: [
+    'Bóle głowy',
+    'Bezsenność',
+    'Zmniejszony apetyt',
+    'Suchość w ustach',
+    'Podwyższone ciśnienie',
+    'Lęk (u podatnych osób)',
+  ],
+
+  czasDzialania: {
+    poczatek: '30-60 min',
+    szczyt: '2-4 h',
+    calkowity: '10-15 h',
+    popierwsze: 'do 20 h (okres półtrwania)',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '25-50 mg',
+      lekka: '50-100 mg',
+      srednia: '100-200 mg',
+      silna: '200-300 mg',
+      bardzoSilna: '300+ mg',
+      jednostka: 'mg',
+      uwagi: 'Standardowa dawka medyczna to 200mg. Wielu użytkowników skutecznie stosuje 100mg.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'tygodnie-miesiące',
+    polowa: 'dni',
+    zero: '1-2 tygodnie',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Bierz rano - długi czas działania',
+      'Pij dużo wody (odwadnia)',
+      'Nie zastępuj snu',
+      'Zacznij od niższej dawki (100mg)',
+      'Rób przerwy by uniknąć tolerancji',
+    ],
+    setISetting: [
+      'Miej konkretne zadania do wykonania',
+      'Nie bierz jeśli nie masz planu',
+    ],
+    przeciwwskazania: [
+      'Problemy z sercem',
+      'Zaburzenia lękowe',
+      'Historia psychoz',
+      'Ciąża',
+    ],
+    znakiOstrzegawcze: [
+      'Wysypka (rzadkie ale poważne)',
+      'Silne bóle głowy',
+      'Silny lęk',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Stymulanty', poziom: 'ostrożność', opis: 'Sumowanie efektów stymulujących.' },
+    { substancja: 'Antykoncepcja hormonalna', poziom: 'ostrożność', opis: 'Może osłabiać działanie antykoncepcji!' },
+    { substancja: 'Kofeina', slug: 'kofeina', kategoria: 'stymulanty', poziom: 'ostrożność', opis: 'Może nasilić lęk i bezsenność.' },
+  ],
+
+  opis: 'Modafinil to lek na narkolepsję stosowany off-label jako nootropik. Poprawia czujność i koncentrację bez euforii typowej dla stymulantów. Działa 10-15 godzin.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['piracetam', 'l-teanina'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest modafinil?
+
+Modafinil to lek eugeroiczny (promujący czuwanie) stosowany w leczeniu narkolepsji, bezdechu sennego i zaburzeń snu związanych z pracą zmianową. Jest szeroko stosowany off-label jako nootropik - "smart drug".
+
+W przeciwieństwie do klasycznych stymulantów (amfetamina, kofeina), modafinil:
+- Nie powoduje typowego "haju" ani euforii
+- Ma niski potencjał uzależniający
+- Nie powoduje "zjazdu" po ustaniu działania
+- Nie zaburza architektury snu tak jak amfetaminy
+
+<SubstanceStats substance={substance} />
+
+## Mechanizm działania
+
+Mechanizm działania modafinilu nie jest w pełni poznany, ale wiadomo że:
+- Zwiększa poziom histaminy (czuwanie)
+- Zwiększa dopaminę w określonych obszarach mózgu
+- Moduluje GABA i glutaminian
+- Zwiększa poziom noradrenaliny
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Czas działania">
+Modafinil działa bardzo długo (10-15h). Jeśli weźmiesz go po południu, prawdopodobnie nie zaśniesz do nocy.
+
+**Zasada: Bierz tylko rano, najpóźniej do 10:00.**
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Wysypka - rzadkie ale poważne
+
+W bardzo rzadkich przypadkach modafinil może wywołać zespół Stevensa-Johnsona (ciężka reakcja skórna). Jeśli pojawi się wysypka, NATYCHMIAST przerwij stosowanie i skonsultuj się z lekarzem.
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+### Antykoncepcja hormonalna
+
+Modafinil może osłabiać działanie antykoncepcji hormonalnej (tabletki, plastry, implanty). Stosuj dodatkową metodę antykoncepcji podczas użycia i przez miesiąc po.
+
+## Aspekty prawne
+
+Modafinil jest lekiem na receptę w Polsce. Posiadanie bez recepty jest technicznie nielegalne, choć rzadko ścigane dla osobistego użytku.

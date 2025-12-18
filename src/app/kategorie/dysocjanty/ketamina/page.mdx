@@ -1,0 +1,195 @@
+export const substance = {
+  nazwa: 'Ketamina',
+  nazwyAlternatywne: ['Keta', 'Special K', 'Vitamin K', 'Kit Kat'],
+  nazwaSystematyczna: '(RS)-2-(2-chlorofenylo)-2-(metyloamino)cykloheksanon',
+  wzorChemiczny: 'C13H16ClNO',
+  kategoria: 'dysocjanty',
+  slug: 'ketamina',
+
+  klasaPrawna: 'kontrolowana',
+  grupaChemiczna: 'Arylocykloheksylaminy',
+
+  efektyGlowne: [
+    'Dysocjacja od ciala',
+    'Euforia',
+    'Zmiany percepcji',
+    'Halucynacje',
+    'Efekt "K-hole"',
+    'Uczucie unoszenia sie',
+  ],
+  efektyUboczne: [
+    'Nudnosci i wymioty',
+    'Dezorientacja',
+    'Problemy z koordynacja',
+    'Podwyzszone cisnienie',
+    'Problemy z pamiecia',
+    'Problemy z pecherz (chroniczne uzycie)',
+  ],
+
+  czasDzialania: {
+    poczatek: '5-15 min (donosowo)',
+    szczyt: '45-60 min',
+    calkowity: '1-2 h',
+    popierwsze: 'do 4 h',
+  },
+
+  osCzasu: [
+    { nazwa: 'Wchodzenie', poczatek: '0 min', koniec: '15 min', opis: 'Szybkie narastanie efektow, lekkość' },
+    { nazwa: 'Szczyt', poczatek: '15 min', koniec: '45 min', opis: 'Pelna dysocjacja, K-hole przy wyzszych dawkach' },
+    { nazwa: 'Plateau', poczatek: '45 min', koniec: '90 min', opis: 'Stabilne efekty dysocjacyjne' },
+    { nazwa: 'Schodzenie', poczatek: '90 min', koniec: '2 h', opis: 'Stopniowy powrot, mecznosc' },
+  ],
+
+  dawkowanie: [
+    {
+      route: 'donosowo',
+      prog: '10-15 mg',
+      lekka: '15-30 mg',
+      srednia: '30-75 mg',
+      silna: '75-150 mg',
+      bardzoSilna: '150+ mg',
+      jednostka: 'mg',
+      uwagi: 'K-hole wystepuje przy dawkach 100-150mg+ donosowo.',
+    },
+    {
+      route: 'doustnie',
+      prog: '50 mg',
+      lekka: '50-100 mg',
+      srednia: '100-200 mg',
+      silna: '200-300 mg',
+      bardzoSilna: '300+ mg',
+      jednostka: 'mg',
+      uwagi: 'Biodostepnosc doustna ok. 20%. Efekty dluzsze ale slabsze.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: '3-7 dni',
+    polowa: '1-2 tygodnie',
+    zero: '2-4 tygodnie',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Zacznij od niskiej dawki (15-20mg donosowo)',
+      'Nie uzywaj wiecej niz raz w tygodniu',
+      'Nie mieszaj z alkoholem ani depresantami',
+      'Siadaj lub poloz sie przed zazyciemn- nie stoj',
+      'Miej przy sobie trip-sittera',
+      'Testuj substancje',
+    ],
+    setISetting: [
+      'Wybierz bezpieczne, wygodne miejsce',
+      'Poloz sie lub usiadz wygodnie',
+      'Przygotuj wode i cos do jedzenia na pozniej',
+      'Cicha muzyka moze poprawic doswiadczenie',
+    ],
+    przeciwwskazania: [
+      'Choroby serca i nadcisnienie',
+      'Problemy z pecherz lub nerkami',
+      'Historia psychoz',
+      'Uzywanie innych depresantow',
+      'Ciaza',
+    ],
+    znakiOstrzegawcze: [
+      'Silny bol brzucha lub podbrzusza',
+      'Krew w moczu',
+      'Utrata przytomnosci',
+      'Trudnosci z oddychaniem',
+    ],
+    pierwszaPomoc: [
+      'Poloz osobe w pozycji bezpiecznej (bocznej)',
+      'Nie zostawiaj jej samej',
+      'W przypadku wymiotow upewnij sie ze nie zachlysnie sie',
+      'W razie utraty przytomnosci wezwij pogotowie',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Ryzyko utraty przytomnosci i zachlysniecia sie wymiocinami.' },
+    { substancja: 'GHB', slug: 'ghb', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa, utrata przytomnosci.' },
+    { substancja: 'Opioidy', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa, wysokie ryzyko przedawkowania.' },
+    { substancja: 'Benzodiazepiny', slug: 'benzodiazepiny', kategoria: 'depresanty', poziom: 'niebezpieczna', opis: 'Nasilona sedacja i dezorientacja.' },
+    { substancja: 'Stymulanty', poziom: 'ostrożność', opis: 'Zwiekszone obciazenie serca.' },
+    { substancja: 'Psychodeliki', poziom: 'synergia', opis: 'Wzmocnienie efektow. Doswiadczeni uzywaja polaczenia.' },
+    { substancja: 'Kannabinoidy', slug: 'thc', kategoria: 'kannabinoidy', poziom: 'ostrożność', opis: 'Wzmocnienie dysocjacji i dezorientacji.' },
+  ],
+
+  opis: 'Ketamina to dysocjacyjny anestetyk uzywany w medycynie. W nizszych dawkach wywoluje euforię i dysocjacje, w wyzszych "K-hole" - gleboka dysocjacje od ciala. Badana w leczeniu depresji.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['dxm', 'pcp'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest ketamina?
+
+Ketamina to syntetyczny dysocjant z grupy arylocykloheksyloamin. Zostala zsyntetyzowana w 1962 roku i jest uzywana w medycynie jako anestetyk, szczegolnie w weterynarii i medycynie ratunkowej. Dziala glownie jako antagonista receptorow NMDA, blokujac normalna transmisje glutaminianu.
+
+W nizszych dawkach ketamina wywoluje euforię, dysocjacje i lekkie efekty halucynogenne. W wyzszych dawkach moze wywolac "K-hole" - stan glebokiej dysocjacji od ciala i otoczenia, czesto opisywany jako doswiadczenie bliskie smierci.
+
+<SubstanceStats substance={substance} />
+
+## Efekty
+
+<EffectsTimeline phases={substance.osCzasu} />
+
+### K-hole
+
+K-hole to stan glebokiej dysocjacji wystepujacy przy wyzszych dawkach (100-150mg+ donosowo). Charakteryzuje sie:
+- Calkowitym odlaczeniem od ciala
+- Doswiadczeniami poza-cialowymi
+- Halucynacjami o charakterze kosmicznym/mistycznym
+- Utrata poczucia czasu i przestrzeni
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Wazne informacje">
+- Ketamina uliczna moze byc zmieszana z innymi substancjami
+- Tolerancja buduje sie szybko
+- Regularne uzycie uszkadza pecherz moczowy
+- Zawsze siadaj lub poloz sie przed zazyciemn
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Ochrona pecherz
+
+Chroniczne uzywanie ketaminy powoduje "ketaminowy pecherz" - powazne uszkodzenie drog moczowych. Objawy:
+- Czeste oddawanie moczu
+- Bol przy oddawaniu moczu
+- Krew w moczu
+- Nietrzymanie moczu
+
+Jedyny sposob zapobiegania to ograniczenie czestotliwosci uzywania (max raz w tygodniu) i ilosci.
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Potencjal terapeutyczny
+
+Ketamina jest badana i stosowana off-label w leczeniu:
+- **Depresji lekoopornej** - szybkie dzialanie (w ciagu godzin)
+- **Mysli samobojczych** - natychmiastowe dzialanie antysamobojcze
+- **PTSD**
+- **Chronicznego bolu**
+
+W 2019 FDA zatwierdzilo esketamine (Spravato) - nosowy spray z ketamina - do leczenia depresji lekoopornej.
+
+## Aspekty prawne
+
+Ketamina jest w Polsce substancja kontrolowana, ale legalna w uzyciu medycznym. Posiadanie bez recepty jest nielegalne.
+
+## Zrodla
+
+- PsychonautWiki - Ketamine
+- TripSit Factsheets - Ketamine

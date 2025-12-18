@@ -1,0 +1,128 @@
+export const substance = {
+  nazwa: 'DXM',
+  nazwyAlternatywne: ['Dekstrometorfan', 'Robo', 'Dex', 'Tussin'],
+  nazwaSystematyczna: '(+)-3-metoksy-17-metylo-morfin-9a,13a,14a-ol',
+  wzorChemiczny: 'C18H25NO',
+  kategoria: 'dysocjanty',
+  slug: 'dxm',
+
+  klasaPrawna: 'legalna',
+  grupaChemiczna: 'Morfinany',
+
+  efektyGlowne: [
+    'Dysocjacja',
+    'Euforia',
+    'Zmiany percepcji',
+    'Muzyka brzmi niesamowicie',
+    'Robo-walk (zaburzona koordynacja)',
+  ],
+  efektyUboczne: [
+    'Nudnosci i wymioty',
+    'Swedzenie',
+    'Przyspieszony puls',
+    'Pocenie sie',
+    'Dezorientacja',
+  ],
+
+  czasDzialania: {
+    poczatek: '30-60 min',
+    szczyt: '2-4 h',
+    calkowity: '6-8 h',
+    popierwsze: 'do 24 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '75-100 mg',
+      lekka: '100-200 mg',
+      srednia: '200-400 mg',
+      silna: '400-700 mg',
+      bardzoSilna: '700+ mg',
+      jednostka: 'mg',
+      uwagi: 'Plateau: 1st (100-200mg), 2nd (200-400mg), 3rd (400-700mg), 4th (700mg+).',
+    },
+  ],
+
+  harmReduction: {
+    zasadyOgolne: [
+      'TYLKO produkty z samym DXM - bez paracetamolu, guaifenesyny!',
+      'Sprawdz czy nie jestes "slow metabolizer" (enzym CYP2D6)',
+      'Zacznij od niskiej dawki',
+      'Nie mieszaj z SSRI (zespol serotoninowy)',
+    ],
+    setISetting: [
+      'Zostań w domu',
+      'Poloz sie wygodnie',
+      'Przygotuj muzyka',
+    ],
+    przeciwwskazania: [
+      'Przyjmowanie SSRI/MAOI',
+      'Problemy z watoba',
+      '"Slow metabolizer" CYP2D6',
+    ],
+    znakiOstrzegawcze: [
+      'Zespol serotoninowy (gorazka, pobudzenie, drganie)',
+      'Trudnosci z oddechem',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'SSRI', poziom: 'zagrożenie-życia', opis: 'Zespol serotoninowy!' },
+    { substancja: 'MAOI', poziom: 'zagrożenie-życia', opis: 'Zespol serotoninowy!' },
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'niebezpieczna', opis: 'Nasilona sedacja i nudnosci.' },
+  ],
+
+  opis: 'DXM to dysocjant dostepny w lekach na kaszel. Wywoluje rozne "plateau" efektow w zaleznosci od dawki - od lekkiej stymulacji po pelna dysocjacje. Wymaga czystego produktu bez dodatków.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['ketamina', 'pcp'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest DXM?
+
+DXM (dekstrometorfan) to dysocjant z grupy morfinanow, dostepny legalnie w lekach przeciwkaszlowych. Dziala jako antagonista NMDA i agonista receptorow sigma, wywolujac efekty dysocjacyjne podobne do ketaminy.
+
+<SubstanceStats substance={substance} />
+
+## Plateau
+
+DXM ma unikalna charakterystyke - rozne dawki wywoluja jakosciowo inne doswiadczenia, nazywane "plateau":
+
+| Plateau | Dawka | Efekty |
+|---------|-------|--------|
+| 1st | 100-200 mg | Lekka stymulacja, muzyka brzmi lepiej |
+| 2nd | 200-400 mg | Euforia, lekka dysocjacja, "robo-walk" |
+| 3rd | 400-700 mg | Silna dysocjacja, halucynacje |
+| 4th | 700+ mg | Pelna dysocjacja, "out of body" |
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="KRYTYCZNE: Sprawdz sklad!">
+**NIGDY** nie uzywaj produktow zawierajacych:
+- Paracetamol (acetaminofen) - uszkodzenie watroby
+- Guaifenesin - wymioty
+- Fenylefryna - problemy z sercem
+- Chlorfeniramina - przedawkowanie
+
+Uzywaj TYLKO produktow zawierajacych sam DXM!
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Aspekty prawne
+
+DXM jest legalny w Polsce jako lek OTC. Naduzywanie moze prowadzic do problemow z zakupem.

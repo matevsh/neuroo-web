@@ -1,0 +1,204 @@
+export const substance = {
+  nazwa: 'Psylocybina',
+  nazwyAlternatywne: ['Grzyby magiczne', 'Shrooms', 'Magic mushrooms', 'Lysiczki'],
+  nazwaSystematyczna: '4-fosforyloksy-N,N-dimetylotryptamina',
+  wzorChemiczny: 'C12H17N2O4P',
+  kategoria: 'psychodeliki',
+  slug: 'psylocybina',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Tryptaminy',
+
+  efektyGlowne: [
+    'Wizje geometryczne',
+    'Euforia',
+    'Introspekcja',
+    'Poczucie jednosci z natura',
+    'Intensyfikacja emocji',
+    'Zmiany percepcji czasu',
+    'Mistyczne doswiadczenia',
+  ],
+  efektyUboczne: [
+    'Nudnosci i wymioty',
+    'Rozszerzenie zrenic',
+    'Dreszcze',
+    'Podwyzszona temperatura',
+    'Lek lub paranoja',
+    'Dezorientacja',
+  ],
+
+  czasDzialania: {
+    poczatek: '15-40 min',
+    szczyt: '1-2 h',
+    calkowity: '4-6 h',
+    popierwsze: 'do 8 h',
+  },
+
+  osCzasu: [
+    { nazwa: 'Wchodzenie', poczatek: '0 min', koniec: '45 min', opis: 'Narastanie efektow, czesto nudnosci' },
+    { nazwa: 'Szczyt', poczatek: '1 h', koniec: '2.5 h', opis: 'Najintensywniejsze efekty wizualne i emocjonalne' },
+    { nazwa: 'Plateau', poczatek: '2.5 h', koniec: '4 h', opis: 'Stabilne efekty, gleboka introspekcja' },
+    { nazwa: 'Schodzenie', poczatek: '4 h', koniec: '6 h', opis: 'Lagodny powrot, czesto refleksyjny nastroj' },
+  ],
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '0.25 g',
+      lekka: '0.5-1 g',
+      srednia: '1-2.5 g',
+      silna: '2.5-5 g',
+      bardzoSilna: '5+ g',
+      jednostka: 'g (susz)',
+      uwagi: 'Dawki dotycza suszonych grzybow Psilocybe cubensis. Inne gatunki moga byc silniejsze.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'natychmiast',
+    polowa: '3-5 dni',
+    zero: '10-14 dni',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Zacznij od niskiej dawki (1g lub mniej)',
+      'Zmiel grzyby dla rownomiernej dystrybucji psylocybiny',
+      'Nie jedz nic 2-3h przed zazyciemaby zredukowac nudnosci',
+      'Miej trip-sittera, szczegolnie za pierwszym razem',
+      'Przygotuj herbate imbirowa na nudnosci',
+    ],
+    setISetting: [
+      'Wybierz bezpieczne, komfortowe miejsce',
+      'Natura moze byc wspanialym settingiem',
+      'Upewnij sie ze jestes w dobrym nastroju',
+      'Miej dostep do wody i owocow',
+      'Przygotuj koce i poduszki',
+    ],
+    przeciwwskazania: [
+      'Historia psychoz lub schizofrenii',
+      'Zaburzenia lekowe lub depresyjne',
+      'Przyjmowanie lekow SSRI/SNRI',
+      'Choroby serca',
+      'Ciaza',
+    ],
+    znakiOstrzegawcze: [
+      'Narastajaca panika',
+      'Silne nudnosci lub wymioty',
+      'Dezorientacja',
+      'Mysli autoagresywne',
+    ],
+    pierwszaPomoc: [
+      'Przenies osobe w spokojne miejsce',
+      'Mow spokojnie i uspokajajaco',
+      'Podaj wode i cos slodkiego',
+      'Przypomnij ze efekty sa tymczasowe',
+      'W razie potrzeby benzodiazepin na uspokojenie',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Lit', poziom: 'zagrożenie-życia', opis: 'Ryzyko drgawek. Absolutnie przeciwwskazane.' },
+    { substancja: 'Tramadol', poziom: 'zagrożenie-życia', opis: 'Ryzyko zespolu serotoninowego.' },
+    { substancja: 'SSRI/SNRI', poziom: 'niebezpieczna', opis: 'Znacznie oslabiaja efekty lub wywoluja zespol serotoninowy.' },
+    { substancja: 'MAOI', poziom: 'niebezpieczna', opis: 'Znacznie wzmacniaja i przedluzaja efekty.' },
+    { substancja: 'LSD', slug: 'lsd', kategoria: 'psychodeliki', poziom: 'synergia', opis: 'Wzajemna tolerancja krzyzowa. Laczenie wzmacnia efekty.' },
+    { substancja: 'Kannabinoidy', slug: 'thc', kategoria: 'kannabinoidy', poziom: 'ostrożność', opis: 'Moze nasilic efekty i lek. Ostroznie.' },
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'ostrożność', opis: 'Oslabia efekty, zwieksza nudnosci.' },
+  ],
+
+  opis: 'Psylocybina to naturalny psychodelik wystepujacy w ponad 200 gatunkach grzybow. Wywoluje gleboke zmiany w percepcji i swiadomosci trwajace 4-6 godzin. Badana w terapii depresji i uzaleznienia.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['lsd', 'dmt', 'meskalina'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest psylocybina?
+
+Psylocybina (4-fosforyloksy-N,N-dimetylotryptamina) to naturalnie wystepujacy psychodelik z grupy tryptamin. Znajduje sie w ponad 200 gatunkach grzybow, w tym popularnych Psilocybe cubensis i europejskiej lysiczce lancetowatej (Psilocybe semilanceata).
+
+Po spozyciu psylocybina jest szybko metabolizowana do psylocyny, ktora jest substancja aktywna. Dziala glownie poprzez receptory serotoninowe 5-HT2A, podobnie jak LSD, ale z krotszym czasem dzialania.
+
+<SubstanceStats substance={substance} />
+
+## Historia i kontekst
+
+Grzyby psylocybinowe byly uzywane przez kultury mezoamerykanskie przez tysiace lat w celach rytualnych i duchowych. Aztekowie nazywali je "teonanacatl" - "cialo bogow". W XX wieku zostaly odkryte na nowo przez zachodnich badaczy i staly sie waznym narzedziem w badaniach nad swiadomoscia.
+
+Obecnie psylocybina jest intensywnie badana jako potencjalny lek na depresje lekooporna, uzaleznienia i lek przed smiercia u pacjentow terminalnych.
+
+## Efekty
+
+<EffectsTimeline phases={substance.osCzasu} />
+
+### Efekty pozytywne
+
+- **Wizje** - geometryczne wzory, intensywne kolory, "oddychajace" powierzchnie
+- **Euforia** - gleboka radosc i poczucie wdziecznosci
+- **Polaczenie z natura** - poczucie jednosci ze swiatem przyrody
+- **Introspekcja** - gleboki wglad w siebie i swoje zycie
+- **Mistyczne doswiadczenia** - poczucie transcendencji i jednosci
+
+### Efekty negatywne
+
+- Nudnosci i wymioty (szczegolnie na poczatku)
+- Lek i paranoja
+- Dezorientacja
+- Dreszcze i zimno
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Wazne informacje o dawkowaniu">
+- Dawki dotycza suszonych grzybow Psilocybe cubensis
+- Swieze grzyby waza ok. 10x wiecej (10g swiezych ≈ 1g suszonych)
+- Lysiczka lancetowata jest ok. 2x silniejsza niz cubensis
+- Zmiel grzyby dla rownomiernej dystrybucji psylocybiny
+- Rozne partie moga miec rozna sile
+</HarmReductionBox>
+
+### Mikrodawkowanie
+
+Mikrodawkowanie to przyjmowanie bardzo malych ilosci (0.1-0.3g) bez odczuwalnych efektow psychodelicznych. Popularne protokoly:
+- **Fadiman**: co 3 dzien
+- **Stamets Stack**: 4 dni on, 3 dni off (z niacyna i lwia grzywa)
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Redukcja nudnosci
+
+Nudnosci sa czestym efektem ubocznym. Sposoby na ich zmniejszenie:
+- Nie jedz 2-3h przed zazycie
+- Wypij herbate imbirowa
+- Zrob "lemon tek" (namocz zmielone grzyby w soku z cytryny przez 20 min)
+- Zrob herbate z grzybow i odfiltruj material rosliny
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Potencjal terapeutyczny
+
+Badania kliniczne pokazuja obiecujace wyniki psylocybiny w leczeniu:
+- **Depresji lekoopornej** - znaczna poprawa u 60-70% pacjentow
+- **Uzaleznienia od alkoholu i nikotyny**
+- **Leku przed smiercia** u pacjentow z choroba terminalna
+- **Zaburzen obsesyjno-kompulsywnych (OCD)**
+
+## Aspekty prawne
+
+Psylocybina jest substancja kontrolowana w Polsce (Grupa I-P). Posiadanie grzybow psylocybinowych jest nielegalne. Niektore kraje (Holandia, Jamajka) maja bardziej liberalne przepisy.
+
+## Zrodla
+
+- [SIN - Psylocybina](https://sin.org.pl/substancje/psylocybina/)
+- [Mykozerca - Dawkowanie](https://mykozerca.pl/grzyby-psylocybinowe-jak-przyjmowac-i-dawkowac/)
+- [Zdrowegeny - Psylocybina](https://zdrowegeny.pl/poradnik/psylocybina)

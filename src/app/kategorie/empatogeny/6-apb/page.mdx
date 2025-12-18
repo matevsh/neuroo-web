@@ -1,0 +1,114 @@
+export const substance = {
+  nazwa: '6-APB',
+  nazwyAlternatywne: ['Benzo fury', 'Benzofuran'],
+  nazwaSystematyczna: '6-(2-aminopropylo)benzofuran',
+  wzorChemiczny: 'C11H13NO',
+  kategoria: 'empatogeny',
+  slug: '6-apb',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Benzofurany',
+
+  efektyGlowne: [
+    'Empatia',
+    'Euforia',
+    'Lekkie wizje',
+    'Stymulacja',
+    'Intensyfikacja muzyki',
+  ],
+  efektyUboczne: [
+    'Dlugi czas dzialania',
+    'Szczekoscisk',
+    'Bezsennosc',
+    'Nudnosci',
+  ],
+
+  czasDzialania: {
+    poczatek: '60-120 min',
+    szczyt: '3-4 h',
+    calkowity: '7-10 h',
+    popierwsze: 'do 24 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '20-30 mg',
+      lekka: '50-75 mg',
+      srednia: '75-110 mg',
+      silna: '110-150 mg',
+      bardzoSilna: '150+ mg',
+      jednostka: 'mg',
+      uwagi: 'Sukceynian = wyzsza dawka, chlorowodorek = nizsza.',
+    },
+  ],
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Bardzo dlugi poczatek - nie dokladaj!',
+      'Czekaj minimum 2-3h przed redozowaniem',
+      'Zachowaj dlugie przerwy (8+ tygodni)',
+      'Testuj substancje',
+    ],
+    setISetting: [
+      'Zaplanuj caly dzien (7-10h dzialania)',
+      'Bezpieczne otoczenie',
+    ],
+    przeciwwskazania: [
+      'Choroby serca',
+      'Przyjmowanie SSRI/MAOI',
+    ],
+    znakiOstrzegawcze: [
+      'Wysoka temperatura',
+      'Bol w klatce piersiowej',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'MAOI', poziom: 'zagrożenie-życia', opis: 'Zespol serotoninowy.' },
+    { substancja: 'SSRI', poziom: 'niebezpieczna', opis: 'Ryzyko zespolu serotoninowego.' },
+    { substancja: 'MDMA', slug: 'mdma', kategoria: 'empatogeny', poziom: 'ostrożność', opis: 'Nie mieszaj empatogenow.' },
+  ],
+
+  opis: '6-APB to empatogen z grupy benzofuranow, czesto opisywany jako "dluzsza MDMA". Dzialanie 7-10 godzin z bardzo dlugim poczatkiem (1-2h). Wymaga cierpliwosci przy dawkowaniu.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['mdma', 'mda'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest 6-APB?
+
+6-APB (6-(2-aminopropylo)benzofuran) to syntetyczny empatogen z grupy benzofuranow. Zostal stworzony jako "research chemical" jako legalna alternatywa dla MDMA. Jest czesto opisywany jako "dluzsza MDMA" ze wzgledu na podobne efekty ale znacznie dluszy czas dzialania.
+
+<SubstanceStats substance={substance} />
+
+## Kluczowa cecha: dlugi poczatek
+
+6-APB ma bardzo dlugi czas poczatku dzialania (1-2 godziny). To prowadzi do czestego bledu - ludzie myslac ze dawka nie zadziala, dokladaja wiecej i koncza z przedawkowaniem.
+
+**NIGDY nie dokladaj przed uplywem 3 godzin od pierwszej dawki!**
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Formy soli">
+6-APB wystepuje jako sukceynian (slabszy) lub chlorowodorek (silniejszy). Dawki w tabeli odnosza sie do chlorowodorku. Dla sukceynianu mnoz x1.3-1.5.
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Aspekty prawne
+
+6-APB jest substancja kontrolowana w Polsce (NPS).

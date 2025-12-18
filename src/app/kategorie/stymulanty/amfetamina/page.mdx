@@ -1,0 +1,210 @@
+export const substance = {
+  nazwa: 'Amfetamina',
+  nazwyAlternatywne: ['Speed', 'Amfa', 'Piko', 'Szybkosc', 'Billy'],
+  nazwaSystematyczna: '(RS)-1-fenylpropan-2-amina',
+  wzorChemiczny: 'C9H13N',
+  kategoria: 'stymulanty',
+  slug: 'amfetamina',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Fenyloetyloaminy',
+
+  efektyGlowne: [
+    'Zwiekszona energia',
+    'Euforia',
+    'Podwyzszona koncentracja',
+    'Zmniejszony apetyt',
+    'Pewnosc siebie',
+    'Gadatliwosc',
+  ],
+  efektyUboczne: [
+    'Przyspieszony puls',
+    'Podwyzszone cisnienie',
+    'Bezsennosc',
+    'Szczekoscisk',
+    'Suchość w ustach',
+    'Drżenie',
+    'Paranoja (przy wysokich dawkach)',
+  ],
+
+  czasDzialania: {
+    poczatek: '15-30 min (doustnie)',
+    szczyt: '1.5-3 h',
+    calkowity: '4-8 h',
+    popierwsze: 'do 24 h',
+  },
+
+  osCzasu: [
+    { nazwa: 'Wchodzenie', poczatek: '0 min', koniec: '30 min', opis: 'Narastanie energii i skupienia' },
+    { nazwa: 'Szczyt', poczatek: '1 h', koniec: '3 h', opis: 'Pelna energia, euforia, produktywnosc' },
+    { nazwa: 'Plateau', poczatek: '3 h', koniec: '6 h', opis: 'Stabilna stymulacja' },
+    { nazwa: 'Schodzenie', poczatek: '6 h', koniec: '12 h', opis: 'Mecznosc, rozdrażnienie, glod' },
+  ],
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '5-10 mg',
+      lekka: '10-25 mg',
+      srednia: '25-50 mg',
+      silna: '50-75 mg',
+      bardzoSilna: '75+ mg',
+      jednostka: 'mg',
+      uwagi: 'Uliczny speed ma czesto 10-30% czystosci. Dawki odnosza sie do czystej substancji.',
+    },
+    {
+      route: 'donosowo',
+      prog: '5 mg',
+      lekka: '5-15 mg',
+      srednia: '15-30 mg',
+      silna: '30-50 mg',
+      bardzoSilna: '50+ mg',
+      jednostka: 'mg',
+      uwagi: 'Szybszy poczatek, krotsze dzialanie, wieksze uszkodzenie sluzowki.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: '1-3 dni',
+    polowa: '3-7 dni',
+    zero: '1-2 tygodnie',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Zacznij od niskiej dawki (10-15mg)',
+      'Nie uzywaj wiecej niz 2 dni z rzedu',
+      'Jedz przed i po uzyciu',
+      'Pij wode regularnie',
+      'Nie mieszaj z alkoholem',
+      'Zaplanuj czas na sen i regeneracje',
+    ],
+    setISetting: [
+      'Miej jasny cel (nauka, praca, zabawa)',
+      'Nie uzywaj gdy jestes zmeczony',
+      'Miej dostep do wody i jedzenia',
+      'Ogranicz uzycie do bezpiecznego otoczenia',
+    ],
+    przeciwwskazania: [
+      'Choroby serca i ukladu krazenia',
+      'Nadcisnienie tetnicze',
+      'Zaburzenia lekowe',
+      'Historia psychoz',
+      'Ciaza',
+      'Problemy z tarczyca',
+    ],
+    znakiOstrzegawcze: [
+      'Bol w klatce piersiowej',
+      'Silny bol glowy',
+      'Paranoja lub halucynacje',
+      'Bardzo szybkie bicie serca',
+      'Drgawki',
+    ],
+    pierwszaPomoc: [
+      'Przenies osobe w spokojne miejsce',
+      'Podaj wode i cos do jedzenia',
+      'Chlodz cialo jesli jest przegrzanie',
+      'W przypadku bolu w klatce piersiowej - natychmiast pogotowie',
+      'Przy paranoji - uspokajaj, nie zostawiaj samej',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'MAOI', poziom: 'zagrożenie-życia', opis: 'Kryzys nadcisnieniowy, smiertelnie niebezpieczne!' },
+    { substancja: 'Tramadol', poziom: 'zagrożenie-życia', opis: 'Ryzyko drgawek.' },
+    { substancja: 'MDMA', slug: 'mdma', kategoria: 'empatogeny', poziom: 'niebezpieczna', opis: 'Zwiekszone obciazenie serca i neurotoksycznosc.' },
+    { substancja: 'Kokaina', slug: 'kokaina', kategoria: 'stymulanty', poziom: 'niebezpieczna', opis: 'Duze obciazenie serca, ryzyko przedawkowania.' },
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'ostrożność', opis: 'Maskuje oznaki zatrucia alkoholem, odwadnia.' },
+    { substancja: 'Kannabinoidy', slug: 'thc', kategoria: 'kannabinoidy', poziom: 'ostrożność', opis: 'Zwieksza obciazenie serca, moze nasilic paranoje.' },
+    { substancja: 'Kofeina', slug: 'kofeina', kategoria: 'stymulanty', poziom: 'ostrożność', opis: 'Dodatkowe obciazenie serca.' },
+  ],
+
+  opis: 'Amfetamina to syntetyczny stymulant zwiekszajacy energie, koncentracje i euforie. Dziala 4-8 godzin. Uzywana medycznie w leczeniu ADHD. Silnie uzaleznia psychicznie.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['metamfetamina', 'kokaina', 'kofeina'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest amfetamina?
+
+Amfetamina to syntetyczny stymulant osrodkowego ukladu nerwowego z grupy fenyloetyloamin. Zostala zsyntetyzowana w 1887 roku i jest uzywana medycznie w leczeniu ADHD (pod nazwami Adderall, Vyvanse) oraz narkolepsji.
+
+Amfetamina dziala poprzez zwiekszenie uwalniania dopaminy i noradrenaliny oraz blokowanie ich wychwytu zwrotnego. Prowadzi to do podwyzszenia energii, koncentracji i nastroju.
+
+<SubstanceStats substance={substance} />
+
+## Efekty
+
+<EffectsTimeline phases={substance.osCzasu} />
+
+### Efekty pozytywne
+- Zwiekszona energia i wytrzyalosc
+- Podwyzszona koncentracja
+- Euforia (szczegolnie na poczatku)
+- Zmniejszony apetyt
+- Pewnosc siebie
+
+### Efekty negatywne
+- Bezsennosc
+- Utrata apetytu
+- Szczekoscisk
+- Paranoja przy wyzszych dawkach lub dlugim uzyciu
+- Zjazd (mecznosc, depresja nastepnego dnia)
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Czystosc ulicznej amfetaminy">
+Uliczny "speed" ma czesto tylko 10-30% czystosci. Reszta to rozcienczalniki (kofeina, kreaktyna) lub niebezpieczne domieszki. Dawki w tabeli odnosza sie do czystej substancji.
+
+Aby ocenic sile ulicznego speeda, zacznij od malej dawki testowej (10-15mg) i obserwuj efekty.
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Zasada "nie wiecej niz 2 dni z rzedu"
+
+Wielodniowe ciagi ("binge") sa szczegolnie niebezpieczne:
+- Narastajace wyczerpanie organizmu
+- Pogorszenie sie efektow (tolerancja)
+- Nasilenie efektow ubocznych (paranoja)
+- Bardzo ciezki zjazd
+- Ryzyko psychozy amfetaminowej
+
+Po kazdym uzyciu zaplanuj minimum 2-3 dni przerwy na sen i regeneracje.
+
+### Dieta i nawodnienie
+
+- Jedz przed uzyciem (amfetamina tlumi apetyt)
+- Pij wode regularnie (500-700 ml/h przy aktywnosci)
+- Unikaj alkoholu (odwadnia)
+- Po zejsciu jedz pozywne posilki
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+## Uzaleznienie
+
+Amfetamina ma wysoki potencjal uzalezniajacy, szczegolnie psychiczny. Objawami uzaleznienia sa:
+- Potrzeba zwiekszania dawek
+- Uzywanie pomimo negatywnych konsekwencji
+- Trudnosci z funkcjonowaniem bez substancji
+- Obsesyjne myslenie o zdobyciu substancji
+
+## Aspekty prawne
+
+Amfetamina jest substancja kontrolowana w Polsce (Grupa I-P). Posiadanie, produkcja i dystrybucja sa nielegalne.
+
+## Zrodla
+
+- PsychonautWiki - Amphetamine
+- TripSit Factsheets - Amphetamine

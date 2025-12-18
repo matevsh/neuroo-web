@@ -1,0 +1,165 @@
+export const substance = {
+  nazwa: 'GHB',
+  nazwyAlternatywne: ['Gamma', 'G', 'Liquid ecstasy', 'Fantasy', 'GBL'],
+  nazwaSystematyczna: 'Kwas gamma-hydroksymasłowy',
+  wzorChemiczny: 'C4H8O3',
+  kategoria: 'depresanty',
+  slug: 'ghb',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Kwasy tłuszczowe',
+
+  efektyGlowne: [
+    'Euforia',
+    'Relaksacja',
+    'Zwiększona towarzyskość',
+    'Zwiększone libido',
+    'Senność',
+  ],
+  efektyUboczne: [
+    'Nudności i wymioty',
+    'Zawroty głowy',
+    'Utrata przytomności',
+    'Amnezja',
+    'Depresja oddechowa',
+    'Silne uzależnienie',
+  ],
+
+  czasDzialania: {
+    poczatek: '10-30 min',
+    szczyt: '30-60 min',
+    calkowity: '2-4 h',
+    popierwsze: 'do 8 h',
+  },
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '0.3-0.5 g',
+      lekka: '0.5-1 g',
+      srednia: '1-2 g',
+      silna: '2-3 g',
+      bardzoSilna: '3+ g',
+      jednostka: 'g',
+      uwagi: 'BARDZO wąski margines bezpieczeństwa! Różnica między dawką rekreacyjną a śpiączkową to często 0.5g.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'dni',
+    polowa: '1-2 dni',
+    zero: '1-2 tygodnie',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'NIGDY nie mieszaj z alkoholem - śmiertelne!',
+      'Precyzyjnie odmierzaj (waga lub strzykawka)',
+      'Nie redozuj przed upływem 2h',
+      'Miej trip-sittera',
+      'Zacznij od niskiej dawki',
+    ],
+    setISetting: [
+      'Bezpieczne otoczenie',
+      'Trzeźwy opiekun',
+      'Nie pij alkoholu tego dnia',
+    ],
+    przeciwwskazania: [
+      'Spożycie alkoholu',
+      'Używanie innych depresantów',
+      'Padaczka',
+      'Choroby serca',
+    ],
+    znakiOstrzegawcze: [
+      'Silna senność',
+      'Utrata przytomności',
+      'Wolny oddech',
+      'Sinica',
+      'Wymioty w nieprzytomności',
+    ],
+    pierwszaPomoc: [
+      'Pozycja boczna bezpieczna',
+      'NIE prowokuj wymiotów',
+      'Wezwij pogotowie',
+      'Nie zostawiaj bez opieki',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'ŚMIERTELNE! Nawet małe ilości alkoholu znacznie nasilają toksyczność.' },
+    { substancja: 'Benzodiazepiny', slug: 'benzodiazepiny', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa.' },
+    { substancja: 'Opioidy', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa.' },
+    { substancja: 'Ketamina', slug: 'ketamina', kategoria: 'dysocjanty', poziom: 'zagrożenie-życia', opis: 'Wymioty w nieświadomości, zachłyśnięcie.' },
+    { substancja: 'Stymulanty', poziom: 'ostrożność', opis: 'Maskują efekty GHB, ryzyko przedawkowania.' },
+  ],
+
+  opis: 'GHB to depresant z efektami podobnymi do alkoholu ale silniejszymi. Wąski margines bezpieczeństwa - różnica między dawką rekreacyjną a śpiączkową to często pół grama. Absolutnie nie mieszać z alkoholem.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['alkohol', 'benzodiazepiny'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest GHB?
+
+GHB (kwas gamma-hydroksymasłowy) to naturalnie występujący neuroprzekaźnik i depresant OUN. Występuje w mózgu w śladowych ilościach. GBL (gamma-butyrolakton) jest prekursorem, który organizm przekształca w GHB.
+
+GHB działa na receptory GABA-B i GHB, wywołując efekty podobne do alkoholu - euforię, relaksację, obniżenie zahamowań.
+
+<SubstanceStats substance={substance} />
+
+## KRYTYCZNE OSTRZEŻENIE
+
+GHB ma jeden z najwęższych marginesów bezpieczeństwa ze wszystkich substancji rekreacyjnych:
+
+- **Dawka rekreacyjna**: 1-2g
+- **Dawka wywołująca śpiączkę**: 2-3g
+- **Różnica**: często tylko 0.5-1g!
+
+**Z alkoholem dawka śmiertelna spada dramatycznie!**
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="PRECYZYJNE DAWKOWANIE">
+GHB MUSI być precyzyjnie odmierzane:
+- Używaj wagi lub strzykawki dozującej
+- Nigdy "na oko"
+- Zanotuj czas i ilość każdej dawki
+- Nie redozuj przed upływem 2 godzin
+- Pamiętaj że stężenie roztworu może się różnić!
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+### GHB + Alkohol = ŚMIERĆ
+
+To połączenie jest **śmiertelnie niebezpieczne** nawet przy małych ilościach alkoholu. Alkohol dramatycznie nasila działanie depresyjne GHB. Wiele zgonów związanych z GHB wynika z tego połączenia.
+
+**Zasada: Jeśli piłeś alkohol tego dnia, NIE bierz GHB.**
+
+## Uzależnienie
+
+GHB silnie uzależnia fizycznie. Odstawienie może wywołać:
+- Silny lęk
+- Bezsenność
+- Drżenie
+- Halucynacje
+- Drgawki
+
+Odstawienie wymaga opieki medycznej!
+
+## Aspekty prawne
+
+GHB i GBL są substancjami kontrolowanymi w Polsce.

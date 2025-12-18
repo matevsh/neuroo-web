@@ -1,0 +1,202 @@
+export const substance = {
+  nazwa: 'LSD',
+  nazwyAlternatywne: ['Kwas', 'Lucy', 'Acid', 'Blotter', 'Trips'],
+  nazwaSystematyczna: 'Dietyloamid kwasu D-lizergowego',
+  wzorChemiczny: 'C20H25N3O',
+  kategoria: 'psychodeliki',
+  slug: 'lsd',
+
+  klasaPrawna: 'nielegalna',
+  grupaChemiczna: 'Lizergamidy',
+
+  efektyGlowne: [
+    'Intensyfikacja zmyslow',
+    'Wizje geometryczne',
+    'Synestezja',
+    'Zmiany percepcji czasu',
+    'Euforia',
+    'Gleboka introspekcja',
+    'Poczucie jednosci',
+  ],
+  efektyUboczne: [
+    'Rozszerzenie zrenic',
+    'Podwyzszona temperatura ciala',
+    'Przyspieszony puls',
+    'Bezsennosc',
+    'Lek lub paranoja',
+    'Nudnosci',
+  ],
+
+  czasDzialania: {
+    poczatek: '20-60 min',
+    szczyt: '3-5 h',
+    calkowity: '8-12 h',
+    popierwsze: 'do 24 h',
+  },
+
+  osCzasu: [
+    { nazwa: 'Wchodzenie', poczatek: '0 min', koniec: '60 min', opis: 'Stopniowe narastanie efektow, moze wystapic lekki niepokój' },
+    { nazwa: 'Szczyt', poczatek: '2 h', koniec: '5 h', opis: 'Najintensywniejsze efekty wizualne i psychologiczne' },
+    { nazwa: 'Plateau', poczatek: '5 h', koniec: '8 h', opis: 'Stabilne efekty, stopniowe lagodnienie' },
+    { nazwa: 'Schodzenie', poczatek: '8 h', koniec: '12 h', opis: 'Powolny powrot do normalnosci' },
+  ],
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '10-25 ug',
+      lekka: '25-75 ug',
+      srednia: '75-150 ug',
+      silna: '150-300 ug',
+      bardzoSilna: '300+ ug',
+      jednostka: 'ug',
+      uwagi: 'Blottery moga miec nierowna dystrybucje substancji. Zawsze testuj nowe zrodlo.',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'natychmiast',
+    polowa: '3-7 dni',
+    zero: '14-21 dni',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Zacznij od niskiej dawki, szczegolnie przy nowym zrodle',
+      'Zawsze testuj substancje zestawem reagentowym (Ehrlich)',
+      'Miej przy sobie trip-sittera',
+      'Nie laczcz z innymi substancjami',
+      'Unikaj prowadzenia pojazdow przez minimum 24h',
+      'Pij wode, ale nie za duzo (500ml/h max)',
+    ],
+    setISetting: [
+      'Wybierz bezpieczne, znane miejsce',
+      'Upewnij sie ze jestes w dobrym nastroju',
+      'Miej dostep do wody i lekkich przekasek',
+      'Przygotuj playlisty muzyczne',
+      'Poinformuj zaufana osobe o planach',
+    ],
+    przeciwwskazania: [
+      'Historia psychoz lub schizofrenii w rodzinie',
+      'Zaburzenia lekowe lub depresyjne',
+      'Przyjmowanie lekow SSRI/SNRI/MAOI',
+      'Choroby serca',
+      'Ciaza i karmienie piersia',
+    ],
+    znakiOstrzegawcze: [
+      'Narastajaca panika lub paranoja',
+      'Mysli samobojcze lub autoagresywne',
+      'Silne zawroty glowy lub mdlosci',
+      'Bol w klatce piersiowej',
+    ],
+    pierwszaPomoc: [
+      'Przenies osobe w spokojne, bezpieczne miejsce',
+      'Mow spokojnie i uspokajajaco',
+      'Przypomnij ze efekty sa tymczasowe',
+      'W razie potrzeby podaj benzodiazepiny',
+      'W przypadku ciezkich objawow wezwij pomoc medyczna',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Lit', poziom: 'zagrożenie-życia', opis: 'Ryzyko drgawek i smierci. Absolutnie przeciwwskazane.' },
+    { substancja: 'Tramadol', poziom: 'zagrożenie-życia', opis: 'Ryzyko zespolu serotoninowego i drgawek.' },
+    { substancja: 'SSRI/SNRI', poziom: 'niebezpieczna', opis: 'Oslabiaja efekty lub wywoluja zespol serotoninowy.' },
+    { substancja: 'MAOI', poziom: 'niebezpieczna', opis: 'Znacznie wzmacniaja i przedluzaja efekty. Ryzyko zespolu serotoninowego.' },
+    { substancja: 'MDMA', slug: 'mdma', kategoria: 'empatogeny', poziom: 'ostrożność', opis: 'Candy flip - intensyfikacja efektow. Wymaga doswiadczenia.' },
+    { substancja: 'Kannabinoidy', slug: 'thc', kategoria: 'kannabinoidy', poziom: 'ostrożność', opis: 'Moze nasilic wizje i lek. Ostrożnie na szczycie.' },
+    { substancja: 'Alkohol', slug: 'alkohol', kategoria: 'depresanty', poziom: 'ostrożność', opis: 'Oslabia efekty, zwieksza ryzyko mdlosci i dezorientacji.' },
+    { substancja: 'Benzodiazepiny', slug: 'benzodiazepiny', kategoria: 'depresanty', poziom: 'bezpieczna', opis: 'Moga posluzyc do przerwania tripu w razie potrzeby.' },
+  ],
+
+  opis: 'LSD (dietyloamid kwasu D-lizergowego) to jeden z najpotezniejszych znanych psychodelikow. Wywoluje gleboke zmiany w percepcji, mysleniu i swiadomosci trwajace 8-12 godzin.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['psylocybina', 'dmt', 'meskalina'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest LSD?
+
+LSD (dietyloamid kwasu D-lizergowego) to polsyntetyczny psychodelik z grupy lizergamidow. Zostal po raz pierwszy zsyntetyzowany przez Alberta Hofmanna w laboratoriach Sandoz w 1938 roku, a jego wlasciwosci psychoaktywne odkryto przypadkowo w 1943 roku podczas slynnej "rowerowej podrozy".
+
+LSD jest jednym z najpotezniejszych znanych psychodelikow - aktywne dawki mierzone sa w mikrogramach. Dziala glownie poprzez agonizm receptorow serotoninowych 5-HT2A, co prowadzi do glebokiej zmiany percepcji, myslenia i emocji.
+
+<SubstanceStats substance={substance} />
+
+## Efekty
+
+LSD wywoluje szeroki zakres efektow psychodelicznych. Doswiadczenie jest silnie zalezne od "set and setting" - nastawienia psychicznego i otoczenia.
+
+<EffectsTimeline phases={substance.osCzasu} />
+
+### Efekty pozytywne
+
+- **Wizje** - geometryczne wzory, intensyfikacja kolorow, "oddychajace" powierzchnie
+- **Synestezja** - "widzenie" dzwiekow, "slyszenie" kolorow
+- **Euforia** - poczucie szczescia i wdziecznosci
+- **Introspekcja** - glebokie przemyslenia o zyciu i sobie
+- **Poczucie jednosci** - rozpuszczenie granic ego, mistyczne doswiadczenia
+
+### Efekty neutralne
+
+- Rozszerzenie zrenic
+- Zmiany w percepcji czasu (spowolnienie lub przyspieszenie)
+- Intensyfikacja muzyki i sztuki
+- Potok mysli
+
+### Efekty negatywne
+
+- Lek i paranoja (szczegolnie przy zlym set/setting)
+- Nudnosci w fazie wchodzenia
+- Bezsennosc (nawet do 24h po zazyciu)
+- Przytlaczajace myslenie petlowe
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Wazne zasady dawkowania">
+- Zawsze zacznij od najnizszej sugerowanej dawki przy nowym zrodle
+- Blottery moga miec nierowna dystrybucje substancji
+- Tolerancja buduje sie natychmiast i znika po 14-21 dniach
+- Nie "dokladaj" jesli nie czujesz efektow - poczekaj minimum 2h
+</HarmReductionBox>
+
+### Tolerancja krzyzowa
+
+LSD wykazuje pelna tolerancje krzyzowa z innymi psychodelikami serotoninergicznymi (psylocybina, meskalina, DMT). Jesli zazyles jeden z nich, efekty innych beda znacznie oslabione przez kolejne 1-2 tygodnie.
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Testowanie substancji
+
+Zawsze testuj LSD zestawem reagentowym **Ehrlich** przed uzyciem. Prawdziwe LSD:
+- Zmieni kolor na fioletowy/rozowy w ciagu 2-5 minut
+- NIE powinno miec gorzkiego smaku (gorzki smak = prawdopodobnie NBOMe)
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+### Szczegolnie niebezpieczne polaczenia
+
+**LSD + Lit** - absolutnie przeciwwskazane. Udokumentowane przypadki drgawek i smierci. Osoby przyjmujace lit nie powinny nigdy uzywac LSD.
+
+**LSD + Tramadol** - wysokie ryzyko zespolu serotoninowego i drgawek.
+
+## Aspekty prawne
+
+LSD jest substancja kontrolowana w Polsce (Grupa I-P). Posiadanie, produkcja i dystrybucja sa nielegalne i karane.
+
+## Zrodla
+
+- [PsychonautWiki - LSD](https://psychonautwiki.org/wiki/LSD)
+- [Narkopedia - LSD](https://narkopedia.org/LSD)
+- [Gemini - LSD jak dziala](https://gemini.pl/poradnik/zdrowie/lsd-jak-dziala-i-jakie-skutki-uboczne-wywoluje/)

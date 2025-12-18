@@ -1,0 +1,200 @@
+export const substance = {
+  nazwa: 'Alkohol',
+  nazwyAlternatywne: ['Etanol', 'Spirytus', 'Wódka', 'Piwo', 'Wino'],
+  nazwaSystematyczna: 'Etanol',
+  wzorChemiczny: 'C2H5OH',
+  kategoria: 'depresanty',
+  slug: 'alkohol',
+
+  klasaPrawna: 'legalna',
+  grupaChemiczna: 'Alkohole',
+
+  efektyGlowne: [
+    'Relaksacja',
+    'Euforia',
+    'Obnizenie zahamowan',
+    'Towarzyskosc',
+    'Uspokojenie',
+    'Sennosc',
+  ],
+  efektyUboczne: [
+    'Obnizenie koordynacji',
+    'Zaburzona mowa',
+    'Nudnosci i wymioty',
+    'Bol glowy (kac)',
+    'Odwodnienie',
+    'Utrata pamieci',
+    'Agresja',
+  ],
+
+  czasDzialania: {
+    poczatek: '15-30 min',
+    szczyt: '45-90 min',
+    calkowity: '2-6 h (zalezenie od ilosci)',
+    popierwsze: 'do 24 h (kac)',
+  },
+
+  osCzasu: [
+    { nazwa: 'Wchodzenie', poczatek: '0 min', koniec: '30 min', opis: 'Narastanie relaksacji i euforii' },
+    { nazwa: 'Szczyt', poczatek: '30 min', koniec: '90 min', opis: 'Pelne dzialanie, obnizenie zahamowan' },
+    { nazwa: 'Plateau', poczatek: '1.5 h', koniec: '4 h', opis: 'Utrzymanie efektow lub narastanie sedacji' },
+    { nazwa: 'Schodzenie', poczatek: '4 h', koniec: '8 h+', opis: 'Sennosc, potem kac (bol glowy, nudnosci)' },
+  ],
+
+  dawkowanie: [
+    {
+      route: 'doustnie',
+      prog: '1 drink',
+      lekka: '1-2 drinki',
+      srednia: '3-4 drinki',
+      silna: '5-7 drinkow',
+      bardzoSilna: '8+ drinkow',
+      jednostka: 'drinki',
+      uwagi: '1 drink = 10g czystego alkoholu = 250ml piwa 5% = 100ml wina = 30ml wodki',
+    },
+  ],
+
+  tolerancja: {
+    pelna: 'tygodnie-miesiace regularnego uzycia',
+    polowa: 'dni',
+    zero: '1-2 tygodnie',
+  },
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Nie pij na pusty zoladek',
+      'Pij wode miedzy drinkami (1:1)',
+      'Ogranicz do 2-3 drinkow na okazje',
+      'Nie mieszaj z innymi depresantami',
+      'Nie prowadz po wypiciu',
+      'Zaplanuj bezpieczny powrot do domu',
+    ],
+    setISetting: [
+      'Pij w bezpiecznym otoczeniu',
+      'Badz z zaufanymi osobami',
+      'Nie pij gdy jestes smutny lub zly',
+      'Jedz przed i w trakcie picia',
+    ],
+    przeciwwskazania: [
+      'Ciaza i karmienie piersia',
+      'Choroby watroby',
+      'Przyjmowanie lekow metabolizowanych przez watrobe',
+      'Historia uzaleznienia od alkoholu',
+      'Zaburzenia psychiczne',
+    ],
+    znakiOstrzegawcze: [
+      'Wymioty z domieszka krwi',
+      'Utrata przytomnosci',
+      'Trudnosci z oddychaniem',
+      'Siniec na twarzy',
+      'Drgawki',
+    ],
+    pierwszaPomoc: [
+      'Poloz osobe w pozycji bezpiecznej (bocznej)',
+      'Nie zostawiaj nieprzytomnej osoby samej',
+      'Nie dawaj kawy ani zimnego prysznica',
+      'W przypadku utraty przytomnosci - pozycja boczna i pogotowie',
+      'Przy zatruciu alkoholem - natychmiast pogotowie',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Benzodiazepiny', slug: 'benzodiazepiny', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa, wysokie ryzyko smierci!' },
+    { substancja: 'Opioidy', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa, smiertelnie niebezpieczne!' },
+    { substancja: 'GHB', slug: 'ghb', kategoria: 'depresanty', poziom: 'zagrożenie-życia', opis: 'Depresja oddechowa, utrata przytomnosci.' },
+    { substancja: 'Ketamina', slug: 'ketamina', kategoria: 'dysocjanty', poziom: 'zagrożenie-życia', opis: 'Ryzyko zachlysniecia sie wymiocinami.' },
+    { substancja: 'Kokaina', slug: 'kokaina', kategoria: 'stymulanty', poziom: 'niebezpieczna', opis: 'Maskuje oznaki upojenia, tworzy kokaetylen (toksyczny).' },
+    { substancja: 'MDMA', slug: 'mdma', kategoria: 'empatogeny', poziom: 'ostrożność', opis: 'Odwadnia, oslabia euforię MDMA.' },
+    { substancja: 'Kannabinoidy', slug: 'thc', kategoria: 'kannabinoidy', poziom: 'ostrożność', opis: 'Nasilenie sedacji i dezorientacji.' },
+    { substancja: 'Psychodeliki', poziom: 'ostrożność', opis: 'Oslabia efekty psychodelikow, zwieksza nudnosci.' },
+  ],
+
+  opis: 'Alkohol (etanol) to najpowszechniej uzywany depresant na swiecie. Wywoluje relaksacje, euforię i obnizenie zahamowan. Silnie uzaleznia fizycznie i psychicznie. Odstawienie u uzaleznionych moze byc smiertelne.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['benzodiazepiny', 'ghb'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest alkohol?
+
+Alkohol etylowy (etanol) to najpowszechniej uzywana substancja psychoaktywna na swiecie. Jest produkowany przez fermentacje cukrow przez drozze i spozyany w formie napojow alkoholowych.
+
+Alkohol dziala jako depresant osrodkowego ukladu nerwowego, wzmacniajac dzialanie GABA (glownego neuroprzekaz nikaza hamujacego) i hamujac glutaminian. Prowadzi to do relaksacji, euforii i obnizenia zahamowan.
+
+<SubstanceStats substance={substance} />
+
+## Efekty
+
+<EffectsTimeline phases={substance.osCzasu} />
+
+### Efekty w zaleznosci od poziomu alkoholu we krwi
+
+| Promile | Efekty |
+|---------|--------|
+| 0.02-0.05 | Lekka relaksacja, cieplo |
+| 0.05-0.10 | Obnizenie zahamowan, euforia |
+| 0.10-0.15 | Pogorszona koordynacja, zaburzona mowa |
+| 0.15-0.25 | Znaczna dezorientacja, nudnosci |
+| 0.25-0.35 | Ryzyko utraty przytomnosci |
+| 0.35+ | Ryzyko smierci, depresja oddechowa |
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Co to jest 1 drink?">
+1 standardowy drink = 10g czystego alkoholu:
+- 250ml piwa 5%
+- 100ml wina 12%
+- 30ml wodki 40%
+
+Organizm metabolizuje ok. 1 drink na godzine.
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+### Picie odpowiedzialne
+
+- **Zasada 1:1** - na kazdego drinka pij szklanka wody
+- **Jedz przed piciem** - jedzenie spowalnia wchlanianie
+- **Znaj swoj limit** - i trzymaj sie go
+- **Zaplanuj powrot** - nigdy nie prowadz po piciu
+- **Nie mieszaj** - unikaj mieszania z innymi substancjami
+
+### Kac i jego zapobieganie
+
+Kac wynika glownie z odwodnienia i toksycznego dzialania aldehydu octowego. Zapobieganie:
+- Pij wode przed snem
+- Jedz tlusty posilek
+- Uzupelnij elektrolity
+- Prześpij sie odpowiednio dlugo
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+### Szczegolnie niebezpieczne polaczenia
+
+**Alkohol + opioidy/benzodiazepiny** - smiertelnie niebezpieczne! Wszystkie te substancje sa depresantami OUN i ich laczenie prowadzi do depresji oddechowej. To najczestszy mechanizm smierci z przedawkowania.
+
+## Uzaleznienie
+
+Alkohol ma wysoki potencjal uzalezniajacy zarowno psychiczny jak i fizyczny. Alkoholizm to choroba postepujaca, ktora nieleczona prowadzi do smierci.
+
+**Odstawienie alkoholu u osoby uzaleznionej jest niebezpieczne** i moze wywolac drgawki, majaczenie alkoholowe (delirium tremens) i smierc. Jesli podejrzewasz uzaleznienie, szukaj pomocy medycznej.
+
+## Aspekty prawne
+
+Alkohol jest legalny dla osob powyzej 18 roku zycia. Prowadzenie pojazdu pod wplywem alkoholu (powyzej 0.2 promila) jest przestepstwem.
+
+## Zrodla
+
+- WHO - Alcohol
+- PARPA - Panstwowa Agencja Rozwiazywania Problemow Alkoholowych

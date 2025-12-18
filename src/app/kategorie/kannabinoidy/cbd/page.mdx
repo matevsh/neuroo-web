@@ -1,0 +1,136 @@
+export const substance = {
+  nazwa: 'CBD',
+  nazwyAlternatywne: ['Kannabidiol', 'Olej CBD', 'Hemp'],
+  nazwaSystematyczna: 'Kannabidiol',
+  wzorChemiczny: 'C21H30O2',
+  kategoria: 'kannabinoidy',
+  slug: 'cbd',
+
+  klasaPrawna: 'legalna',
+  grupaChemiczna: 'Kannabinoidy naturalne',
+
+  efektyGlowne: [
+    'Relaksacja',
+    'Zmniejszenie lęku',
+    'Działanie przeciwzapalne',
+    'Poprawa snu',
+    'Łagodzenie bólu',
+  ],
+  efektyUboczne: [
+    'Senność',
+    'Suchość w ustach',
+    'Obniżone ciśnienie',
+    'Biegunka (wysokie dawki)',
+    'Interakcje z lekami',
+  ],
+
+  czasDzialania: {
+    poczatek: '15-45 min (podjęzykowo)',
+    szczyt: '1-2 h',
+    calkowity: '4-6 h',
+    popierwsze: 'efekty mogą kumulować się przy regularnym użyciu',
+  },
+
+  dawkowanie: [
+    {
+      route: 'podjęzykowo',
+      prog: '5-10 mg',
+      lekka: '10-25 mg',
+      srednia: '25-50 mg',
+      silna: '50-100 mg',
+      bardzoSilna: '100+ mg',
+      jednostka: 'mg',
+      uwagi: 'CBD nie ma efektów psychoaktywnych. Dawkowanie zależy od celu (lęk, ból, sen).',
+    },
+  ],
+
+  harmReduction: {
+    zasadyOgolne: [
+      'Kupuj od zaufanych producentów z certyfikatami',
+      'Zacznij od niskiej dawki',
+      'Sprawdź interakcje z przyjmowanymi lekami',
+      'CBD może wpływać na metabolizm leków (CYP450)',
+    ],
+    setISetting: [
+      'Można stosować codziennie',
+      'Nie powoduje upojenia',
+    ],
+    przeciwwskazania: [
+      'Przyjmowanie leków metabolizowanych przez CYP450',
+      'Ciąża (brak badań)',
+      'Choroby wątroby',
+    ],
+    znakiOstrzegawcze: [
+      'Nadmierna senność',
+      'Problemy żołądkowe',
+    ],
+  },
+
+  interakcje: [
+    { substancja: 'Leki na rozrzedzenie krwi', poziom: 'ostrożność', opis: 'CBD może nasilać ich działanie.' },
+    { substancja: 'Leki przeciwpadaczkowe', poziom: 'ostrożność', opis: 'Interakcje z metabolizmem.' },
+    { substancja: 'THC', slug: 'thc', kategoria: 'kannabinoidy', poziom: 'synergia', opis: 'CBD łagodzi lęk wywołany THC.' },
+  ],
+
+  opis: 'CBD to niepsychoaktywny kannabinoid z konopi. Stosowany dla relaksacji, zmniejszenia lęku i łagodzenia bólu. Legalny w Polsce jako suplement.',
+  dataAktualizacji: '2024-12-18',
+
+  powiazane: ['thc'],
+}
+
+export const metadata = {
+  title: `${substance.nazwa} - Efekty, dawkowanie, harm reduction | Neuroo`,
+  description: substance.opis,
+}
+
+## Czym jest CBD?
+
+CBD (kannabidiol) to niepsychoaktywny kannabinoid występujący w konopiach. W przeciwieństwie do THC, CBD nie powoduje "haju" ani upojenia. Działa na układ endokannabinoidowy w sposób modulujący, nie wiążąc się bezpośrednio z receptorami CB1.
+
+CBD jest legalny w Polsce i dostępny jako suplement diety, kosmetyk i żywność.
+
+<SubstanceStats substance={substance} />
+
+## Potencjalne zastosowania
+
+- **Lęk** - badania pokazują potencjał przeciwlękowy
+- **Sen** - może poprawiać jakość snu
+- **Ból** - działanie przeciwzapalne i przeciwbólowe
+- **Padaczka** - zatwierdzone leki na niektóre formy (Epidiolex)
+- **Stany zapalne** - działanie przeciwzapalne
+
+## Dawkowanie
+
+<DosageTable dosages={substance.dawkowanie} />
+
+<HarmReductionBox title="Jakość produktów">
+Rynek CBD jest słabo regulowany. Na co zwracać uwagę:
+- Certyfikat analizy (CoA) od laboratorium
+- Zawartość THC poniżej 0.2%
+- Brak pestycydów i metali ciężkich
+- Renomowany producent
+</HarmReductionBox>
+
+## Harm Reduction
+
+<HarmReductionBox harm={substance.harmReduction} />
+
+## Interakcje
+
+<InteractionsMatrix interactions={substance.interakcje} />
+
+### CBD i leki
+
+CBD hamuje enzymy CYP450 w wątrobie, co może wpływać na metabolizm wielu leków. Jeśli przyjmujesz leki na receptę, skonsultuj się z lekarzem przed użyciem CBD.
+
+## Formy CBD
+
+- **Olejki** - podjęzykowo, najpopularniejsza forma
+- **Kapsułki** - łatwe dawkowanie
+- **Kremy** - miejscowo na ból
+- **Vape** - szybkie działanie
+- **Żelki** - smaczne, ale wolniejsze
+
+## Aspekty prawne
+
+CBD jest legalne w Polsce, pod warunkiem że pochodzi z konopi o zawartości THC poniżej 0.2%. Dostępne bez recepty.
