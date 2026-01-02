@@ -14,6 +14,19 @@ import { unifiedConditional } from 'unified-conditional'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  async rewrites() {
+    return [
+      {
+        source: '/ingest/static/:path*',
+        destination: 'https://eu-assets.i.posthog.com/static/:path*',
+      },
+      {
+        source: '/ingest/:path*',
+        destination: 'https://eu.i.posthog.com/:path*',
+      },
+    ]
+  },
+  skipTrailingSlashRedirect: true,
 }
 
 function remarkMDXLayout(source, metaName) {
@@ -75,7 +88,9 @@ export default async function config() {
             [[remarkMDXLayout, '@/app/work/wrapper', 'caseStudy']],
           ],
           [
-            new RegExp(`^${escapeStringRegexp(path.resolve('src/app/kategorie'))}`),
+            new RegExp(
+              `^${escapeStringRegexp(path.resolve('src/app/kategorie'))}`,
+            ),
             [[remarkMDXLayout, '@/app/kategorie/wrapper', 'substance']],
           ],
         ],
