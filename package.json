@@ -23,8 +23,6 @@
     "fast-glob": "^3.3.3",
     "framer-motion": "^12.23.11",
     "next": "^15",
-    "posthog-js": "^1.313.0",
-    "posthog-node": "^5.18.1",
     "react": "^19",
     "react-dom": "^19",
     "recma-import-images": "0.0.3",
